@@ -13,7 +13,7 @@ import retrofit2.Response
 
 class TestPageActivity : AppCompatActivity() {
 
-    private val patientDataApiService = NetworkModule.patientDataApiService
+    private val oksResultApiService = NetworkModule.oksResultApiService
 
     private var questionNumber: Int = 1
 
@@ -158,12 +158,12 @@ class TestPageActivity : AppCompatActivity() {
                 buttonNext.text = getString(R.string.send)
             }
             12 -> {
-                val patientData = PatientData(resultArr[0], resultArr[1], resultArr[2],
+                val oksResult = OKSResult(resultArr[0], resultArr[1], resultArr[2],
                     resultArr[3], resultArr[4], resultArr[5], resultArr[6], resultArr[7],
                     resultArr[8], resultArr[9], resultArr[10], resultArr[11]
                 )
-                Log.i("Success", patientData.toString())
-                patientDataApiService.addPatientTestResults(patientData).enqueue(object : Callback<Any> {
+                Log.i("Success", oksResult.toString())
+                oksResultApiService.addOKSResult(oksResult).enqueue(object : Callback<Any> {
                     override fun onResponse(call: Call<Any>, response: Response<Any>) {
                         Log.i("Success", response.toString())
                     }

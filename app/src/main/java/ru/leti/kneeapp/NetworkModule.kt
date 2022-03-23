@@ -32,5 +32,5 @@ object NetworkModule {
         .addConverterFactory(MoshiConverterFactory.create(moshi))
         .build()
 
-    val patientDataApiService : PatientDataApiService = retrofit.create()
+    val oksResultApiService: OKSResultApiService = retrofit.create()
 }
