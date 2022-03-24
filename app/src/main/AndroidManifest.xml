@@ -15,7 +15,7 @@
             android:name=".TestPageActivity"
             android:exported="false" />
         <activity
-            android:name=".EnterLoginActivity"
+            android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

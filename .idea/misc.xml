@@ -4,7 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Kirill/AndroidStudioProjects/KneeApp/app/src/main/res/layout/activity_enter_login.xml" value="0.264" />
-        <entry key="..\:/Users/Kirill/AndroidStudioProjects/KneeApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Kirill/AndroidStudioProjects/KneeApp/app/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="..\:/Users/Kirill/AndroidStudioProjects/KneeApp/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/Kirill/AndroidStudioProjects/KneeApp/app/src/main/res/layout/activity_test_page.xml" value="0.536" />
       </map>
     </option>

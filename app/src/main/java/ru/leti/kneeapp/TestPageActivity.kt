@@ -17,7 +17,7 @@ class TestPageActivity : AppCompatActivity() {
 
     private var questionNumber: Int = 1
 
-    private var resultArr = IntArray(12)
+    private var resultArr = ShortArray(12)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,8 +54,8 @@ class TestPageActivity : AppCompatActivity() {
         val radioButtonVariant3: RadioButton = findViewById(R.id.option3)
         val radioButtonVariant4: RadioButton = findViewById(R.id.option4)
         val radioButtonVariant5: RadioButton = findViewById(R.id.option5)
-        resultArr[questionNumber - 1] = radioGroup
-            .indexOfChild(findViewById(radioGroup.checkedRadioButtonId)) + 1
+        resultArr[questionNumber - 1] = (radioGroup
+            .indexOfChild(findViewById(radioGroup.checkedRadioButtonId)) + 1).toShort()
         radioGroup.clearCheck()
         when (questionNumber) {
             1 -> {

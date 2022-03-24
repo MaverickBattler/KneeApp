@@ -9,4 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="light_brown">#FFF6D8</color>
     <color name="brown">#2C1600</color>
+    <color name="darker_brown">#221514</color>
+    <color name="light_brown_variant">#FCC08F</color>
+    <color name="active_color">#8A5237</color>
+    <color name="active_color_variant">#503926</color>
 </resources>
