@@ -13,4 +13,6 @@
     <color name="light_brown_variant">#FCC08F</color>
     <color name="active_color">#8A5237</color>
     <color name="active_color_variant">#503926</color>
+    <color name="grey">#606060</color>
+    <color name="error_red">#F11A5E</color>
 </resources>

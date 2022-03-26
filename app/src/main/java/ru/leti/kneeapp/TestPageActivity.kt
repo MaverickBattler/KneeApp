@@ -57,6 +57,8 @@ class TestPageActivity : AppCompatActivity() {
         resultArr[questionNumber - 1] = (radioGroup
             .indexOfChild(findViewById(radioGroup.checkedRadioButtonId)) + 1).toShort()
         radioGroup.clearCheck()
+        radioGroup.jumpDrawablesToCurrentState()
+
         when (questionNumber) {
             1 -> {
                 questionTextView.text = getString(R.string.question2)

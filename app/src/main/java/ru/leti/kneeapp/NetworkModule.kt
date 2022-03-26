@@ -33,4 +33,5 @@ object NetworkModule {
         .build()
 
     val oksResultApiService: OKSResultApiService = retrofit.create()
+    val patientIdentityApiService: PatientIdentityApiService = retrofit.create()
 }
