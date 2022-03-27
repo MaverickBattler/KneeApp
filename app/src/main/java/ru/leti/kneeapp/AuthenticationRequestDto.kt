@@ -5,6 +5,6 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class AuthenticationRequestDto(
-    @Json(name = "medicalCardNumber")
-    val medicalCardNumber: String
+    @Json(name = "medicalCardId")
+    val medicalCardId: String
 )

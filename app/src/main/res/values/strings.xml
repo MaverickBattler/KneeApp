@@ -90,8 +90,8 @@
     <string name="question12option4">4) С чрезвычайными затруднениями</string>
     <string name="question12option5">5) Нет, это невозможно</string>
     <string name="login">Вход в приложение</string>
-    <string name="medical_card_number">Номер медицинской карты</string>
-    <string name="medical_card_number_hint">12345678ABCD</string>
+    <string name="medical_card_id">ID медицинской карты:</string>
+    <string name="medical_card_id_hint">12345678ABCD</string>
     <string name="Login">Войти</string>
     <string name="PatientNotFound">Пользователь с таким номером медицинской карты не найден
     или данный пациент не проходил операцию по эндопротезированию коленного сустава</string>

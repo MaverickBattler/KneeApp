@@ -25,11 +25,11 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         val progressBar = findViewById<ProgressBar>(R.id.progressBar)
         val buttonLogin = findViewById<Button>(R.id.buttonLogin)
-        val editTextMedicalCardCode = findViewById<EditText>(R.id.editTextMedicalCardCode)
+        val editTextMedicalCardId = findViewById<EditText>(R.id.editTextMedicalCardId)
         val errorMessage = findViewById<TextView>(R.id.loginErrorMessage)
         val animShake: Animation = AnimationUtils.loadAnimation(this, R.anim.text_shake_animaton)
         buttonLogin.setOnClickListener {
-            val requestDto = AuthenticationRequestDto(editTextMedicalCardCode.text.toString())
+            val requestDto = AuthenticationRequestDto(editTextMedicalCardId.text.toString())
             patientIdentityApiService.authenticate(requestDto).enqueue(object : Callback<String> {
                 override fun onResponse(call: Call<String>, response: Response<String>) {
                     val phoneNumber: String? = response.body()
@@ -50,7 +50,7 @@ class LoginActivity : AppCompatActivity() {
             buttonLogin.visibility = View.INVISIBLE
             progressBar.visibility = View.VISIBLE
         }
-        editTextMedicalCardCode.doAfterTextChanged {
+        editTextMedicalCardId.doAfterTextChanged {
             if (errorMessage.isVisible)
                 errorMessage.visibility = View.INVISIBLE
         }

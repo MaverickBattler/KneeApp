@@ -8,10 +8,10 @@
     android:background="@color/light_brown">
 
     <TextView
-        android:id="@+id/medical_card_number"
+        android:id="@+id/medical_card_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/medical_card_number"
+        android:text="@string/medical_card_id"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -36,20 +36,20 @@
         app:layout_constraintVertical_bias="0.162" />
 
     <EditText
-        android:id="@+id/editTextMedicalCardCode"
+        android:id="@+id/editTextMedicalCardId"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:ems="10"
-        android:hint="@string/medical_card_number_hint"
+        android:hint="@string/medical_card_id_hint"
         android:inputType="text"
         android:minHeight="48dp"
         android:textColorHint="@color/grey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="@id/medical_card_number"
-        app:layout_constraintTop_toBottomOf="@+id/medical_card_number"
+        app:layout_constraintStart_toStartOf="@id/medical_card_id"
+        app:layout_constraintTop_toBottomOf="@+id/medical_card_id"
         app:layout_constraintVertical_bias="0" />
 
     <Button
@@ -58,10 +58,10 @@
         android:layout_height="wrap_content"
         android:text="@string/Login"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/editTextMedicalCardCode"
+        app:layout_constraintEnd_toEndOf="@id/editTextMedicalCardId"
         app:layout_constraintHorizontal_bias="1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextMedicalCardCode"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMedicalCardId"
         app:layout_constraintVertical_bias="0.5" />
 
     <ProgressBar
@@ -89,8 +89,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="@+id/editTextMedicalCardCode"
-        app:layout_constraintTop_toBottomOf="@+id/editTextMedicalCardCode"
+        app:layout_constraintStart_toStartOf="@+id/editTextMedicalCardId"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMedicalCardId"
         app:layout_constraintVertical_bias="0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
