@@ -10,7 +10,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        openLoginActivity()
         val startOKSButton: Button = findViewById(R.id.buttonRunOKS)
         startOKSButton.setOnClickListener {
             openOksTestActivity()
@@ -19,11 +18,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun openOksTestActivity() {
         val intent = Intent(this, TestPageActivity::class.java)
-        startActivity(intent)
-    }
-
-    private fun openLoginActivity() {
-        val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
     }
 }

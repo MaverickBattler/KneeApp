@@ -36,7 +36,7 @@
         app:layout_constraintVertical_bias="0.162" />
 
     <EditText
-        android:id="@+id/editTextMedicalCardId"
+        android:id="@+id/editTextMedicalCardID"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -58,10 +58,10 @@
         android:layout_height="wrap_content"
         android:text="@string/Login"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/editTextMedicalCardId"
+        app:layout_constraintEnd_toEndOf="@id/editTextMedicalCardID"
         app:layout_constraintHorizontal_bias="1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextMedicalCardId"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMedicalCardID"
         app:layout_constraintVertical_bias="0.5" />
 
     <ProgressBar
@@ -89,8 +89,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="@+id/editTextMedicalCardId"
-        app:layout_constraintTop_toBottomOf="@+id/editTextMedicalCardId"
+        app:layout_constraintStart_toStartOf="@+id/editTextMedicalCardID"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMedicalCardID"
         app:layout_constraintVertical_bias="0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

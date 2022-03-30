@@ -29,7 +29,7 @@ object NetworkModule {
     private val retrofit = Retrofit.Builder()
         .baseUrl(baseUrl)
         .client(httpClient)
-        .addConverterFactory(MoshiConverterFactory.create(moshi))
+        .addConverterFactory(MoshiConverterFactory.create(moshi).asLenient())
         .build()
 
     val oksResultApiService: OKSResultApiService = retrofit.create()
