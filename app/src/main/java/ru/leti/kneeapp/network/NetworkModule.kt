@@ -1,4 +1,4 @@
-package ru.leti.kneeapp
+package ru.leti.kneeapp.network
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -33,5 +33,5 @@ object NetworkModule {
         .build()
 
     val oksResultApiService: OKSResultApiService = retrofit.create()
-    val patientIdentityApiService: PatientIdentityApiService = retrofit.create()
+    val userService: UserService = retrofit.create()
 }

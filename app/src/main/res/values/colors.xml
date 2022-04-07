@@ -15,4 +15,6 @@
     <color name="active_color_variant">#503926</color>
     <color name="grey">#606060</color>
     <color name="error_red">#F11A5E</color>
+    <color name="information_color">#464646</color>
+    <color name="blue_link">#2196F3</color>
 </resources>

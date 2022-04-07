@@ -89,10 +89,42 @@
     <string name="question12option3">3) С умеренными затруднениями</string>
     <string name="question12option4">4) С чрезвычайными затруднениями</string>
     <string name="question12option5">5) Нет, это невозможно</string>
-    <string name="login">Вход в приложение</string>
+    <string name="appName">KneeApp</string>
     <string name="medical_card_id">ID медицинской карты:</string>
     <string name="medical_card_id_hint">12345678ABCD</string>
-    <string name="Login">Войти</string>
-    <string name="PatientNotFound">Пациент с таким ID медицинской карты не найден
+    <string name="Continue">Продолжить</string>
+    <string name="patientNotFound">Пациент с таким ID медицинской карты не найден
     или данный пациент не проходил операцию по эндопротезированию коленного сустава</string>
+    <string name="user_already_registered">Пользователь с данным ID медицинской карты
+        уже зарегистрирован в приложении. Пожалуйста, проследуйте на страницу
+        входа в приложение</string>
+    <string name="sent_email_verification_part_1">"Почти готово! На ваш адрес электронной почты "</string>
+    <string name="sent_email_verification_part_2">" "было послано письмо с подтверждением.
+        Для подтверждения вашей личности нажмите на ссылку в письме.
+        После этого вы сможете войти в приложение с адресом электронной почты, на которую вам
+        пришло письмо с подтверждением."</string>
+    <string name="CouldNotGetEmail">Не удалось получить email пациента с данным
+        ID медицинской карты</string>
+    <string name="registrationStep1">Шаг 1</string>
+    <string name="Register">Зарегистрироваться</string>
+    <string name="Login">Войти</string>
+    <string name="email">Email</string>
+    <string name="password">Пароль</string>
+    <string name="register"><u>Зарегистрироваться</u></string>
+    <string name="NotYetRegistered">Еще не зарегистрированы?</string>
+    <string name="email_hint">yourname@gmail.com</string>
+    <string name="password_hint">********</string>
+    <string name="registrationStep2">Шаг 2</string>
+    <string name="enterPassword">Придумайте пароль:</string>
+    <string name="Finish">Зарегистрироваться</string>
+    <string name="enterPasswordAgain">Введите пароль снова:</string>
+    <string name="registrationSuccess">Успех!</string>
+    <string name="goBackToLogin">Вернуться</string>
+    <string name="successful_registration_message">Вы успешно зарегистрировались в приложении!
+        Осталось только подтвердить электронную почту.</string>
+    <string name="passwordsDontMatch">Пароли не совпадают.</string>
+    <string name="userAlreadyRegistered">Пациент с данным ID медицинской карты уже зарегистрирован.</string>
+    <string name="invalidNameOrPassword">Неверное имя пользователя или пароль.</string>
+    <string name="serverNotResponding">Не удалось соединиться с сервером. Пожалуйста, повторите попытку позднее.</string>
+    <string name="wrongUsernameOrPassword">Неверное имя пользователя или пароль.</string>
 </resources>

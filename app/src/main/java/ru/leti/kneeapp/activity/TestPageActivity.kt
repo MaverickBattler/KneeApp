@@ -1,4 +1,4 @@
-package ru.leti.kneeapp
+package ru.leti.kneeapp.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,6 +10,9 @@ import android.widget.TextView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import ru.leti.kneeapp.network.NetworkModule
+import ru.leti.kneeapp.OKSResult
+import ru.leti.kneeapp.R
 
 class TestPageActivity : AppCompatActivity() {
 

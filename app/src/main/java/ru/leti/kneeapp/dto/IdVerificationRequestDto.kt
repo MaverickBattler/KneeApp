@@ -1,10 +1,10 @@
-package ru.leti.kneeapp
+package ru.leti.kneeapp.dto
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class AuthenticationRequestDto(
+data class IdVerificationRequestDto(
     @Json(name = "medicalCardId")
     val medicalCardId: String
 )
