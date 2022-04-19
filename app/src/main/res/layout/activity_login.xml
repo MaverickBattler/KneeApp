@@ -33,7 +33,7 @@
         app:layout_constraintVertical_bias="0.15" />
 
     <TextView
-        android:id="@+id/startAppNameTextView"
+        android:id="@+id/loginAppNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/appName"
@@ -109,7 +109,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="@+id/editTextEmailAddress"
-        app:layout_constraintTop_toBottomOf="@+id/startAppNameTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/loginAppNameTextView" />
 
     <TextView
         android:id="@+id/passwordLoginActivity"

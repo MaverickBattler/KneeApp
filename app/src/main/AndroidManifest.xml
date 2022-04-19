@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KneeApp">
         <activity
+            android:name=".activity.StartActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".activity.RegistrationSuccessActivity"
             android:exported="false" />
         <activity
@@ -19,13 +28,7 @@
             android:exported="false" />
         <activity
             android:name=".activity.LoginActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".activity.TestPageActivity"
             android:exported="false" />
