@@ -125,6 +125,7 @@
     <string name="passwordsDontMatch">Пароли не совпадают.</string>
     <string name="userAlreadyRegistered">Пациент с данным ID медицинской карты уже зарегистрирован.</string>
     <string name="invalidNameOrPassword">Неверное имя пользователя или пароль.</string>
-    <string name="serverNotResponding">Не удалось соединиться с сервером. Пожалуйста, повторите попытку позднее.</string>
+    <string name="serverNotResponding">Не удалось соединиться с сервером.</string>
     <string name="wrongUsernameOrPassword">Неверное имя пользователя или пароль.</string>
+    <string name="SharedPreferencesFileName">KneeApp</string>
 </resources>
