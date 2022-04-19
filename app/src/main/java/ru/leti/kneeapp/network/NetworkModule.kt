@@ -7,24 +7,25 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.create
+import ru.leti.kneeapp.network.UnsafeOkHttpClient.Companion.ignoreAllSSLErrors
 import java.util.concurrent.TimeUnit
 
 object NetworkModule {
-    private val baseUrl = "http://192.168.1.40:8080/"
+    private const val baseUrl = "https://192.168.1.40:8443/"
 
     private val loggingInterceptor = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
     }
 
-    private val httpClient = OkHttpClient.Builder()
-        .addInterceptor(loggingInterceptor)
-        .addNetworkInterceptor(loggingInterceptor)
-        .connectTimeout(10, TimeUnit.SECONDS)
-        .writeTimeout(30, TimeUnit.SECONDS)
-        .readTimeout(30, TimeUnit.SECONDS)
-        .build()
+    private val httpClient = OkHttpClient.Builder().ignoreAllSSLErrors()
+            .addInterceptor(loggingInterceptor)
+            .addNetworkInterceptor(loggingInterceptor)
+            .connectTimeout(5, TimeUnit.SECONDS)
+            .writeTimeout(10, TimeUnit.SECONDS)
+            .readTimeout(10, TimeUnit.SECONDS)
+            .build()
 
-    val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
+    private val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
 
     private val retrofit = Retrofit.Builder()
         .baseUrl(baseUrl)
