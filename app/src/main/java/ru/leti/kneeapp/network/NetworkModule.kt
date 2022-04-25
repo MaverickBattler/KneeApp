@@ -11,7 +11,7 @@ import ru.leti.kneeapp.network.UnsafeOkHttpClient.Companion.ignoreAllSSLErrors
 import java.util.concurrent.TimeUnit
 
 object NetworkModule {
-    private const val baseUrl = "https://192.168.1.40:8443/"
+    private const val baseUrl = "http://192.168.1.40:8080/"
 
     private val loggingInterceptor = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
@@ -33,6 +33,6 @@ object NetworkModule {
         .addConverterFactory(MoshiConverterFactory.create(moshi).asLenient())
         .build()
 
-    val oksResultApiService: OKSResultApiService = retrofit.create()
+    val oksResultApiService: OksResultApiService = retrofit.create()
     val userService: UserService = retrofit.create()
 }

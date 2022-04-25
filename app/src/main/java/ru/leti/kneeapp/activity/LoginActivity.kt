@@ -1,7 +1,6 @@
 package ru.leti.kneeapp.activity
 
 import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -15,12 +14,11 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.core.widget.doAfterTextChanged
-import androidx.security.crypto.EncryptedSharedPreferences
-import androidx.security.crypto.MasterKey
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import ru.leti.kneeapp.R
+import ru.leti.kneeapp.SharedPreferencesProvider
 import ru.leti.kneeapp.dto.AuthenticationRequestDto
 import ru.leti.kneeapp.network.NetworkModule
 
@@ -49,8 +47,10 @@ class LoginActivity : AppCompatActivity() {
                         showErrorMessage(getString(R.string.wrongUsernameOrPassword))
                     } else {
                         //save authToken
-                        val sharedPreferences = getEncryptedSharedPreferences()
+                        val sharedPreferencesProvider = SharedPreferencesProvider(applicationContext)
+                        val sharedPreferences = sharedPreferencesProvider.getEncryptedSharedPreferences()
                         val editor = sharedPreferences.edit()
+                        editor.putString("email", email)
                         editor.putString("auth_token", response.body())
                         editor.apply()
                         openMainActivity()
@@ -105,21 +105,5 @@ class LoginActivity : AppCompatActivity() {
         errorMessage.text = errorMessageString
         errorMessage.visibility = View.VISIBLE
         errorMessage.startAnimation(animShake)
-    }
-
-    fun getEncryptedSharedPreferences(): SharedPreferences {
-        return EncryptedSharedPreferences.create(
-            application,
-            getString(R.string.SharedPreferencesFileName),
-            getMasterKey(),
-            EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
-            EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
-        )
-    }
-
-    private fun getMasterKey(): MasterKey {
-        return MasterKey.Builder(application)
-            .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
-            .build()
     }
 }

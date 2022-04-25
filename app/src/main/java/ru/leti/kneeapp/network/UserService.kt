@@ -1,6 +1,5 @@
 package ru.leti.kneeapp.network
 
-import okhttp3.Response
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST
@@ -9,7 +8,6 @@ import ru.leti.kneeapp.dto.IdVerificationRequestDto
 import ru.leti.kneeapp.dto.RegistrationRequestDto
 
 interface UserService {
-    //@POST("/kneeapp/verify-patient-id")
     @POST("/verify-patient-id")
     fun verifyMedicalCardId(@Body idVerificationRequestDto: IdVerificationRequestDto) : Call<String>
 

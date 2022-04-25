@@ -1,10 +1,12 @@
-package ru.leti.kneeapp
+package ru.leti.kneeapp.dto
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class OKSResult (
+data class OksResultDto (
+    @Json(name = "email")
+    val email: String,
     @Json(name = "answer1")
     val answer1: Short,
     @Json(name = "answer2")
