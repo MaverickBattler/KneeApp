@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.StartActivity"
-    android:background="@color/light_brown">
+    android:background="@color/soft_background">
 
     <TextView
         android:id="@+id/startAppNameTextView"

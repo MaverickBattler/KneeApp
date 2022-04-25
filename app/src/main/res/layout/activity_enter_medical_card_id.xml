@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.EnterMedicalCardIdActivity"
-    android:background="@color/light_brown">
+    android:background="@color/soft_background">
 
     <TextView
         android:id="@+id/medical_card_id"
@@ -37,7 +37,7 @@
 
     <EditText
         android:id="@+id/editTextMedicalCardID"
-        android:layout_width="300dp"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:hint="@string/medical_card_id_hint"
@@ -58,11 +58,11 @@
         android:text="@string/Continue"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/editTextMedicalCardID"
-        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.811"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextMedicalCardID"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintTop_toBottomOf="@+id/errorMessageRegistrationStep1"
+        app:layout_constraintVertical_bias="0.485" />
 
     <ProgressBar
         android:id="@+id/progressBarRegistrationStep1"
@@ -77,15 +77,15 @@
 
     <TextView
         android:id="@+id/errorMessageRegistrationStep1"
-        android:layout_width="320dp"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="25dp"
         android:text="@string/patientNotFound"
         android:textColor="@color/error_red"
         android:textSize="16sp"
         android:textStyle="italic"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"

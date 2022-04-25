@@ -128,4 +128,5 @@
     <string name="serverNotResponding">Не удалось соединиться с сервером.</string>
     <string name="wrongUsernameOrPassword">Неверное имя пользователя или пароль.</string>
     <string name="SharedPreferencesFileName">KneeApp</string>
+    <string name="chooseAnOptionError">Пожалуйста, выберите вариант ответа.</string>
 </resources>
