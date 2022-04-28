@@ -129,4 +129,18 @@
     <string name="wrongUsernameOrPassword">Неверное имя пользователя или пароль.</string>
     <string name="SharedPreferencesFileName">KneeApp</string>
     <string name="chooseAnOptionError">Пожалуйста, выберите вариант ответа.</string>
+    <string name="title_activity_navigation_drawer">NavigationDrawerActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_home">Главная</string>
+    <string name="menu_oks">Oxford Knee Score</string>
+    <string name="menu_training">Тренировки</string>
+    <string name="Anonymous">Аноним</string>
+    <string name="Logout">Выйти</string>
+    <string name="test_oks_title">Тест Oxford Knee Score</string>
+    <string name="training_title">Тренировки</string>
 </resources>

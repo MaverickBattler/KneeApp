@@ -1,5 +1,6 @@
 package ru.leti.kneeapp.activity
 
+import android.app.TaskStackBuilder
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -34,8 +35,8 @@ class RegistrationSuccessActivity : AppCompatActivity() {
     }
 
     private fun openLoginActivity() {
-        val intent = Intent(this, LoginActivity::class.java)
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-        startActivity(intent)
+        val loginIntent = Intent(this, LoginActivity::class.java)
+        TaskStackBuilder.create(applicationContext)
+            .addNextIntentWithParentStack(loginIntent).startActivities()
     }
 }
