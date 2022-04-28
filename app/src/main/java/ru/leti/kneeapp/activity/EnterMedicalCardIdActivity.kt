@@ -14,10 +14,12 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.core.widget.doAfterTextChanged
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import ru.leti.kneeapp.dto.IdVerificationRequestDto
 import ru.leti.kneeapp.network.NetworkModule
 import ru.leti.kneeapp.R
 
@@ -34,13 +36,19 @@ class EnterMedicalCardIdActivity : AppCompatActivity() {
         val messageTextView = findViewById<TextView>(R.id.errorMessageRegistrationStep1)
 
         buttonLogin.setOnClickListener {
-            val requestDto = IdVerificationRequestDto(editTextMedicalCardId.text.toString())
-            patientIdentityApiService.verifyMedicalCardId(requestDto).enqueue(object : Callback<String> {
+            val medicalCardId = editTextMedicalCardId.text.toString()
+            val requestBody : RequestBody =
+                medicalCardId.toRequestBody("text/plain".toMediaTypeOrNull())
+            patientIdentityApiService.verifyMedicalCardId(requestBody)
+                .enqueue(object : Callback<String> {
                 override fun onResponse(call: Call<String>, response: Response<String>) {
                     when (response.body()) {
-                        "to_be_registered" -> openRegistrationActivity(editTextMedicalCardId.text.toString())
-                        "registered" -> showInformation(getString(R.string.userAlreadyRegistered))
-                        else -> showErrorMessage(getString(R.string.patientNotFound))
+                        "to_be_registered" ->
+                            openRegistrationActivity(editTextMedicalCardId.text.toString())
+                        "registered" ->
+                            showInformation(getString(R.string.userAlreadyRegistered))
+                        else ->
+                            showErrorMessage(getString(R.string.patientNotFound))
                     }
                     progressBar.visibility = View.INVISIBLE
                     buttonLogin.visibility = View.VISIBLE

@@ -14,12 +14,16 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.core.widget.doAfterTextChanged
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import ru.leti.kneeapp.R
 import ru.leti.kneeapp.SharedPreferencesProvider
 import ru.leti.kneeapp.dto.AuthenticationRequestDto
+import ru.leti.kneeapp.dto.UserDataDto
 import ru.leti.kneeapp.network.NetworkModule
 
 
@@ -43,20 +47,48 @@ class LoginActivity : AppCompatActivity() {
             val requestDto = AuthenticationRequestDto(email, password)
             userService.login(requestDto).enqueue(object : Callback<String> {
                 override fun onResponse(call: Call<String>, response: Response<String>) {
-                    if (response.code() == 403) {
+                    if (response.code() == 403 || response.code() == 500) {
                         showErrorMessage(getString(R.string.wrongUsernameOrPassword))
+                        progressBar.visibility = View.INVISIBLE
+                        buttonToLogin.visibility = View.VISIBLE
                     } else {
-                        //save authToken
-                        val sharedPreferencesProvider = SharedPreferencesProvider(applicationContext)
-                        val sharedPreferences = sharedPreferencesProvider.getEncryptedSharedPreferences()
+                        //save email and authToken
+                        val sharedPreferencesProvider =
+                            SharedPreferencesProvider(applicationContext)
+                        val sharedPreferences = sharedPreferencesProvider
+                            .getEncryptedSharedPreferences()
                         val editor = sharedPreferences.edit()
                         editor.putString("email", email)
                         editor.putString("auth_token", response.body())
                         editor.apply()
-                        openMainActivity()
+
+                        val authHeader = "Bearer_${response.body()}"
+                        val requestBody : RequestBody =
+                            email.toRequestBody("text/plain".toMediaTypeOrNull())
+                        userService.getUserData(authHeader, requestBody).enqueue(object :
+                            Callback<UserDataDto> {
+                            override fun onResponse(call: Call<UserDataDto>,
+                                                    response: Response<UserDataDto>) {
+                                if (response.code() != 403 && response.code() != 500) {
+                                    val userDataDto = response.body()
+                                    if (userDataDto != null) {
+                                        openMainActivity(userDataDto.firstName, userDataDto.lastName)
+                                    } else {
+                                        openMainActivity(getString(R.string.Anonymous), "")
+                                    }
+                                }
+                                progressBar.visibility = View.INVISIBLE
+                                buttonToLogin.visibility = View.VISIBLE
+                            }
+
+                            override fun onFailure(call: Call<UserDataDto>, t: Throwable) {
+                                Log.i("Failure", t.message ?: "Null message")
+                                showErrorMessage(getString(R.string.serverNotResponding))
+                                progressBar.visibility = View.INVISIBLE
+                                buttonToLogin.visibility = View.VISIBLE
+                            }
+                        })
                     }
-                    progressBar.visibility = View.INVISIBLE
-                    buttonToLogin.visibility = View.VISIBLE
                 }
 
                 override fun onFailure(call: Call<String>, t: Throwable) {
@@ -82,8 +114,9 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun openMainActivity() {
+    private fun openMainActivity(firstName : String, lastName : String) {
         val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra("nameAndSurname", "$firstName $lastName")
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
         startActivity(intent)
     }
