@@ -150,5 +150,8 @@
     <string name="timer_hours">%1$d ч. %2$d мин. %3$d с.</string>
     <string name="timer_mins">%1$d мин. %2$d с.</string>
     <string name="timer_seconds">%1$d с.</string>
+    <string name="channel_name">KneeApp канал уведомлений</string>
+    <string name="channel_description">Канал уведомлений приложения KneeApp</string>
+    <string name="channel_id">kneeapp</string>
 
 </resources>

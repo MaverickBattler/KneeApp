@@ -1,6 +1,7 @@
 package ru.leti.kneeapp.activity
 
-import android.app.TaskStackBuilder
+import android.app.*
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,9 +14,10 @@ import androidx.core.view.isVisible
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import ru.leti.kneeapp.AlarmReceiver
 import ru.leti.kneeapp.network.NetworkModule
 import ru.leti.kneeapp.R
-import ru.leti.kneeapp.SharedPreferencesProvider
+import ru.leti.kneeapp.util.SharedPreferencesProvider
 import ru.leti.kneeapp.dto.OksResultDto
 
 class TestPageActivity : AppCompatActivity() {
@@ -81,8 +83,9 @@ class TestPageActivity : AppCompatActivity() {
                             if (response.code() == 403 || response.code() == 500) {
                                 openLoginActivity() //Ошибка аутентификации
                             } else {//Успешное завершение, переход к окну OKS
-                                val timeInMillis : Long? = response.body()
+                                val timeInMillis: Long? = response.body()
                                 if (timeInMillis != null) {
+                                    setAlarm(timeInMillis + 604800000)
                                     val editor = sharedPreferences.edit()
                                     editor.putLong("last_oks", timeInMillis)
                                     editor.apply()
@@ -239,6 +242,17 @@ class TestPageActivity : AppCompatActivity() {
         val loginIntent = Intent(this, LoginActivity::class.java)
         TaskStackBuilder.create(applicationContext).addNextIntentWithParentStack(loginIntent)
             .startActivities()
+    }
+
+    private fun setAlarm(at: Long) {
+        val alarmManager: AlarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val i = Intent(applicationContext, AlarmReceiver::class.java)
+        val pendingIntent: PendingIntent = PendingIntent.getBroadcast(
+            applicationContext, 0, i,
+            PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
+        )
+        alarmManager.set(AlarmManager.RTC, at, pendingIntent)
+
     }
 
 }

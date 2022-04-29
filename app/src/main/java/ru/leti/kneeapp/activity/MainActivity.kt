@@ -15,7 +15,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import ru.leti.kneeapp.R
-import ru.leti.kneeapp.SharedPreferencesProvider
+import ru.leti.kneeapp.util.SharedPreferencesProvider
 import ru.leti.kneeapp.databinding.ActivityNavigationDrawerBinding
 
 class MainActivity : AppCompatActivity() {

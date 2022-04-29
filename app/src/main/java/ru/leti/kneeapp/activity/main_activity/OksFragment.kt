@@ -11,7 +11,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import ru.leti.kneeapp.R
-import ru.leti.kneeapp.SharedPreferencesProvider
+import ru.leti.kneeapp.util.SharedPreferencesProvider
 import ru.leti.kneeapp.activity.TestPageActivity
 import ru.leti.kneeapp.databinding.FragmentOksBinding
 import java.util.*

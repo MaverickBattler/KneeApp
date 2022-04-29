@@ -1,9 +1,10 @@
-package ru.leti.kneeapp
+package ru.leti.kneeapp.util
 
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
+import ru.leti.kneeapp.R
 
 class SharedPreferencesProvider (private val applicationContext: Context) {
     fun getEncryptedSharedPreferences(): SharedPreferences {

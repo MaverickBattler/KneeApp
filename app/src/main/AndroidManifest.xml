@@ -40,6 +40,8 @@
         <activity
             android:name=".activity.EnterMedicalCardIdActivity"
             android:exported="false" />
+
+        <receiver android:name=".AlarmReceiver"/>
     </application>
 
 </manifest>

@@ -21,7 +21,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import ru.leti.kneeapp.R
-import ru.leti.kneeapp.SharedPreferencesProvider
+import ru.leti.kneeapp.util.SharedPreferencesProvider
 import ru.leti.kneeapp.dto.AuthenticationRequestDto
 import ru.leti.kneeapp.dto.UserDataDto
 import ru.leti.kneeapp.network.NetworkModule
