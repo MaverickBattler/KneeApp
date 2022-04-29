@@ -76,17 +76,27 @@ class TestPageActivity : AppCompatActivity() {
                     oksResultApiService.addOksResult(
                         authHeader,
                         oksResult
-                    ).enqueue(object : Callback<Unit> {
-                        override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
+                    ).enqueue(object : Callback<Long> {
+                        override fun onResponse(call: Call<Long>, response: Response<Long>) {
                             if (response.code() == 403 || response.code() == 500) {
                                 openLoginActivity() //Ошибка аутентификации
-                            } else {
-                                finish() //Успешное завершение, переход к главному окну
+                            } else {//Успешное завершение, переход к окну OKS
+                                val timeInMillis : Long? = response.body()
+                                if (timeInMillis != null) {
+                                    val editor = sharedPreferences.edit()
+                                    editor.putLong("last_oks", timeInMillis)
+                                    editor.apply()
+                                    finish()
+                                } else {
+                                    showErrorMessage(getString(R.string.internalServerError))
+                                    progressBar.visibility = View.INVISIBLE
+                                    buttonNext.visibility = View.VISIBLE
+                                }
                             }
                             Log.i("Success", response.toString())
                         }
 
-                        override fun onFailure(call: Call<Unit>, t: Throwable) {
+                        override fun onFailure(call: Call<Long>, t: Throwable) {
                             Log.i("Failure", t.message ?: "Null message")
                             showErrorMessage(getString(R.string.serverNotResponding))
                             progressBar.visibility = View.INVISIBLE

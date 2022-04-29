@@ -19,4 +19,6 @@
     <color name="blue_link">#0277BD</color>
     <color name="errorRed_alternative">#B60000</color>
     <color name="soft_background">#FFFBE2</color>
+    <color name="light_gray">#A6A6A6</color>
+    <color name="brown_pale">#4E342E</color>
 </resources>

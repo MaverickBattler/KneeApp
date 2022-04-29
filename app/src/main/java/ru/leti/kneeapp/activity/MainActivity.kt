@@ -54,6 +54,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         val headerView : View = navView.getHeaderView(0)
+        headerView.setOnClickListener {
+            //Открытие фрагмента с профилем пользователя
+        }
         val navUsername : TextView = headerView
             .findViewById(R.id.textViewFirstnameLastnameNavDrawer)
         val navUserEmail : TextView = headerView

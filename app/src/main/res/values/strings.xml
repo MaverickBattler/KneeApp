@@ -135,7 +135,7 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Настройки</string>
     <string name="menu_home">Главная</string>
     <string name="menu_oks">Oxford Knee Score</string>
     <string name="menu_training">Тренировки</string>
@@ -143,4 +143,12 @@
     <string name="Logout">Выйти</string>
     <string name="test_oks_title">Тест Oxford Knee Score</string>
     <string name="training_title">Тренировки</string>
+    <string name="max_timer_value">7:00:00:00</string>
+    <string name="next_test_in">Пройдите следующий тест через</string>
+    <string name="internalServerError">Произошла ошибка на сервере.</string>
+    <string name="timer_days">%1$d дн. %2$d ч. %3$d мин. %4$d с.</string>
+    <string name="timer_hours">%1$d ч. %2$d мин. %3$d с.</string>
+    <string name="timer_mins">%1$d мин. %2$d с.</string>
+    <string name="timer_seconds">%1$d с.</string>
+
 </resources>

@@ -9,6 +9,22 @@
     android:background="@color/soft_background">
 
     <TextView
+        android:id="@+id/textOnTimerToNextOks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next_test_in"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:visibility="invisible"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/buttonRunOKS"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/testOksDescription"
+        app:layout_constraintVertical_bias="0.541" />
+
+    <TextView
         android:id="@+id/testOksDescription"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -27,10 +43,26 @@
         android:id="@+id/buttonRunOKS"
         android:layout_width="300dp"
         android:layout_height="80dp"
-        android:backgroundTint="#2C1600"
+        android:backgroundTint="@color/light_gray"
         android:text="@string/main_menu_run_oks"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/testOksDescription" />
+
+    <TextView
+        android:id="@+id/timerToNextOks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/max_timer_value"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/buttonRunOKS"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textOnTimerToNextOks"
+        app:layout_constraintVertical_bias="0.354" />
 </androidx.constraintlayout.widget.ConstraintLayout>

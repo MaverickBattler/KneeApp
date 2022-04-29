@@ -9,5 +9,5 @@ import ru.leti.kneeapp.dto.OksResultDto
 interface OksResultApiService {
     @POST("/oksResult")
     fun addOksResult(@Header("Authorization") authHeader: String,
-                     @Body oksResultDto: OksResultDto) : Call<Unit>
+                     @Body oksResultDto: OksResultDto) : Call<Long>
 }
