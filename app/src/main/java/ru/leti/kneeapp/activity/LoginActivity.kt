@@ -48,7 +48,7 @@ class LoginActivity : AppCompatActivity() {
             userService.login(requestDto).enqueue(object : Callback<String> {
                 override fun onResponse(call: Call<String>, response: Response<String>) {
                     if (response.code() == 403 || response.code() == 500) {
-                        showErrorMessage(getString(R.string.wrongUsernameOrPassword))
+                        showErrorMessage(getString(R.string.wrong_username_or_password))
                         progressBar.visibility = View.INVISIBLE
                         buttonToLogin.visibility = View.VISIBLE
                     } else {
@@ -74,7 +74,7 @@ class LoginActivity : AppCompatActivity() {
                                     if (userDataDto != null) {
                                         openMainActivity(userDataDto.firstName, userDataDto.lastName)
                                     } else {
-                                        openMainActivity(getString(R.string.Anonymous), "")
+                                        openMainActivity(getString(R.string.anonymous), "")
                                     }
                                 }
                                 progressBar.visibility = View.INVISIBLE
@@ -83,7 +83,7 @@ class LoginActivity : AppCompatActivity() {
 
                             override fun onFailure(call: Call<UserDataDto>, t: Throwable) {
                                 Log.i("Failure", t.message ?: "Null message")
-                                showErrorMessage(getString(R.string.serverNotResponding))
+                                showErrorMessage(getString(R.string.server_not_responding))
                                 progressBar.visibility = View.INVISIBLE
                                 buttonToLogin.visibility = View.VISIBLE
                             }
@@ -95,7 +95,7 @@ class LoginActivity : AppCompatActivity() {
                     Log.i("Failure", t.message ?: "Null message")
                     progressBar.visibility = View.INVISIBLE
                     buttonToLogin.visibility = View.VISIBLE
-                    showErrorMessage(getString(R.string.serverNotResponding))
+                    showErrorMessage(getString(R.string.server_not_responding))
                 }
             })
             buttonToLogin.visibility = View.INVISIBLE

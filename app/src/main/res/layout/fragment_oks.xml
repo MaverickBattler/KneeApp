@@ -43,7 +43,7 @@
         android:id="@+id/buttonRunOKS"
         android:layout_width="300dp"
         android:layout_height="80dp"
-        android:backgroundTint="@color/light_gray"
+        android:backgroundTint="@color/brown"
         android:text="@string/main_menu_run_oks"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

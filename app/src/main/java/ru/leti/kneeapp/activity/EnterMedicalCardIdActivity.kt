@@ -46,9 +46,9 @@ class EnterMedicalCardIdActivity : AppCompatActivity() {
                         "to_be_registered" ->
                             openRegistrationActivity(editTextMedicalCardId.text.toString())
                         "registered" ->
-                            showInformation(getString(R.string.userAlreadyRegistered))
+                            showInformation(getString(R.string.user_already_registered_short))
                         else ->
-                            showErrorMessage(getString(R.string.patientNotFound))
+                            showErrorMessage(getString(R.string.patient_not_found))
                     }
                     progressBar.visibility = View.INVISIBLE
                     buttonLogin.visibility = View.VISIBLE
@@ -57,9 +57,9 @@ class EnterMedicalCardIdActivity : AppCompatActivity() {
                 override fun onFailure(call: Call<String>, t: Throwable) {
                     Log.i("Failure", t.message ?: "Null message")
                     if (t.message == "End of input")
-                        showErrorMessage(getString(R.string.patientNotFound))
+                        showErrorMessage(getString(R.string.patient_not_found))
                     else
-                        showErrorMessage(getString(R.string.serverNotResponding))
+                        showErrorMessage(getString(R.string.server_not_responding))
                     progressBar.visibility = View.INVISIBLE
                     buttonLogin.visibility = View.VISIBLE
                 }

@@ -10,7 +10,7 @@ class SharedPreferencesProvider (private val applicationContext: Context) {
     fun getEncryptedSharedPreferences(): SharedPreferences {
         return EncryptedSharedPreferences.create(
             applicationContext,
-            applicationContext.getString(R.string.SharedPreferencesFileName),
+            applicationContext.getString(R.string.shared_preferences_file_name),
             getMasterKey(),
             EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
             EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM

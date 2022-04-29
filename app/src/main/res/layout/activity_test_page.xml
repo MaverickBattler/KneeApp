@@ -128,7 +128,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
         android:textSize="16sp"
-        android:text="@string/chooseAnOptionError"
+        android:text="@string/choose_an_option_error"
         android:textColor="@color/errorRed_alternative"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/nextButton"

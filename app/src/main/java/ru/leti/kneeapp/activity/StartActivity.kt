@@ -46,7 +46,7 @@ class StartActivity : AppCompatActivity() {
                         if (userDataDto != null) {
                             openMainActivity(userDataDto.firstName, userDataDto.lastName)
                         } else {
-                            openMainActivity(getString(R.string.Anonymous), "")
+                            openMainActivity(getString(R.string.anonymous), "")
                         }
                     } else openLoginActivity()
                 }

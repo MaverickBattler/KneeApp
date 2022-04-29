@@ -48,7 +48,7 @@ class RegistrationActivity : AppCompatActivity() {
                         if (email != null) {
                             openRegistrationSuccessActivity(email)
                         } else {
-                            showErrorMessage(getString(R.string.CouldNotGetEmail))
+                            showErrorMessage(getString(R.string.could_not_get_email))
                         }
                         progressBar.visibility = View.INVISIBLE
                         buttonFinishRegistration.visibility = View.VISIBLE
@@ -58,7 +58,7 @@ class RegistrationActivity : AppCompatActivity() {
                         Log.i("Failure", t.message ?: "Null message")
                         progressBar.visibility = View.INVISIBLE
                         buttonFinishRegistration.visibility = View.VISIBLE
-                        showErrorMessage(getString(R.string.patientNotFound))
+                        showErrorMessage(getString(R.string.patient_not_found))
                     }
                 })
                 buttonFinishRegistration.visibility = View.INVISIBLE
@@ -66,7 +66,7 @@ class RegistrationActivity : AppCompatActivity() {
 
 
             } else {
-                showErrorMessage(getString(R.string.passwordsDontMatch))
+                showErrorMessage(getString(R.string.passwords_dont_match))
             }
         }
         passwordEditText.doAfterTextChanged {

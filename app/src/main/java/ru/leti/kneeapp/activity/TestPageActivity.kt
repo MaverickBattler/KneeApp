@@ -54,7 +54,7 @@ class TestPageActivity : AppCompatActivity() {
         val progressBar: ProgressBar = findViewById(R.id.progressBarTestPage)
 
         if (radioGroup.checkedRadioButtonId == -1)
-            showErrorMessage(getString(R.string.chooseAnOptionError))
+            showErrorMessage(getString(R.string.choose_an_option_error))
         else {
             resultArr[questionNumber - 1] = (radioGroup
                 .indexOfChild(findViewById(radioGroup.checkedRadioButtonId)) + 1).toShort()
@@ -91,7 +91,7 @@ class TestPageActivity : AppCompatActivity() {
                                     editor.apply()
                                     finish()
                                 } else {
-                                    showErrorMessage(getString(R.string.internalServerError))
+                                    showErrorMessage(getString(R.string.internal_server_error))
                                     progressBar.visibility = View.INVISIBLE
                                     buttonNext.visibility = View.VISIBLE
                                 }
@@ -101,7 +101,7 @@ class TestPageActivity : AppCompatActivity() {
 
                         override fun onFailure(call: Call<Long>, t: Throwable) {
                             Log.i("Failure", t.message ?: "Null message")
-                            showErrorMessage(getString(R.string.serverNotResponding))
+                            showErrorMessage(getString(R.string.server_not_responding))
                             progressBar.visibility = View.INVISIBLE
                             buttonNext.visibility = View.VISIBLE
                         }

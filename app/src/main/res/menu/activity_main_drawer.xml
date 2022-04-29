@@ -15,7 +15,7 @@
             android:title="@string/menu_training" />
         <item
             android:id="@+id/nav_logout"
-            android:title="@string/Logout"
+            android:title="@string/logout"
             />
     </group>
 </menu>

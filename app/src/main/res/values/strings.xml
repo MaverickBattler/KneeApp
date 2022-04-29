@@ -92,8 +92,8 @@
     <string name="appName">KneeApp</string>
     <string name="medical_card_id">ID медицинской карты:</string>
     <string name="medical_card_id_hint">12345678ABCD</string>
-    <string name="Continue">Продолжить</string>
-    <string name="patientNotFound">Пациент с таким ID медицинской карты не найден
+    <string name="to_continue">Продолжить</string>
+    <string name="patient_not_found">Пациент с таким ID медицинской карты не найден
     или данный пациент не проходил операцию по эндопротезированию коленного сустава</string>
     <string name="user_already_registered">Пользователь с данным ID медицинской карты
         уже зарегистрирован в приложении. Пожалуйста, проследуйте на страницу
@@ -103,32 +103,31 @@
         Для подтверждения вашей личности нажмите на ссылку в письме.
         После этого вы сможете войти в приложение с адресом электронной почты, на которую вам
         пришло письмо с подтверждением."</string>
-    <string name="CouldNotGetEmail">Не удалось получить email пациента с данным
+    <string name="could_not_get_email">Не удалось получить email пациента с данным
         ID медицинской карты</string>
-    <string name="registrationStep1">Шаг 1</string>
-    <string name="Register">Зарегистрироваться</string>
+    <string name="registration_step1">Шаг 1</string>
     <string name="Login">Войти</string>
     <string name="email">Email</string>
     <string name="password">Пароль</string>
     <string name="register"><u>Зарегистрироваться</u></string>
-    <string name="NotYetRegistered">Еще не зарегистрированы?</string>
+    <string name="not_yet_registered">Еще не зарегистрированы?</string>
     <string name="email_hint">yourname@gmail.com</string>
     <string name="password_hint">********</string>
-    <string name="registrationStep2">Шаг 2</string>
-    <string name="enterPassword">Придумайте пароль:</string>
-    <string name="Finish">Зарегистрироваться</string>
-    <string name="enterPasswordAgain">Введите пароль снова:</string>
-    <string name="registrationSuccess">Успех!</string>
-    <string name="goBackToLogin">Вернуться</string>
+    <string name="registration_step2">Шаг 2</string>
+    <string name="enter_password">Придумайте пароль:</string>
+    <string name="finish">Зарегистрироваться</string>
+    <string name="enter_password_again">Введите пароль снова:</string>
+    <string name="registration_success">Успех!</string>
+    <string name="go_back_to_login">Вернуться</string>
     <string name="successful_registration_message">Вы успешно зарегистрировались в приложении!
         Осталось только подтвердить электронную почту.</string>
-    <string name="passwordsDontMatch">Пароли не совпадают.</string>
-    <string name="userAlreadyRegistered">Пациент с данным ID медицинской карты уже зарегистрирован.</string>
-    <string name="invalidNameOrPassword">Неверное имя пользователя или пароль.</string>
-    <string name="serverNotResponding">Не удалось соединиться с сервером.</string>
-    <string name="wrongUsernameOrPassword">Неверное имя пользователя или пароль.</string>
-    <string name="SharedPreferencesFileName">KneeApp</string>
-    <string name="chooseAnOptionError">Пожалуйста, выберите вариант ответа.</string>
+    <string name="passwords_dont_match">Пароли не совпадают.</string>
+    <string name="user_already_registered_short">Пациент с данным ID медицинской карты уже зарегистрирован.</string>
+    <string name="invalid_name_or_password">Неверное имя пользователя или пароль.</string>
+    <string name="server_not_responding">Не удалось соединиться с сервером.</string>
+    <string name="wrong_username_or_password">Неверное имя пользователя или пароль.</string>
+    <string name="shared_preferences_file_name">KneeApp</string>
+    <string name="choose_an_option_error">Пожалуйста, выберите вариант ответа.</string>
     <string name="title_activity_navigation_drawer">NavigationDrawerActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -139,13 +138,13 @@
     <string name="menu_home">Главная</string>
     <string name="menu_oks">Oxford Knee Score</string>
     <string name="menu_training">Тренировки</string>
-    <string name="Anonymous">Аноним</string>
-    <string name="Logout">Выйти</string>
-    <string name="test_oks_title">Тест Oxford Knee Score</string>
+    <string name="anonymous">Аноним</string>
+    <string name="logout">Выйти</string>
+    <string name="test_oks_title">Анкета Oxford Knee Score</string>
     <string name="training_title">Тренировки</string>
     <string name="max_timer_value">7:00:00:00</string>
     <string name="next_test_in">Пройдите следующий тест через</string>
-    <string name="internalServerError">Произошла ошибка на сервере.</string>
+    <string name="internal_server_error">Произошла ошибка на сервере.</string>
     <string name="timer_days">%1$d дн. %2$d ч. %3$d мин. %4$d с.</string>
     <string name="timer_hours">%1$d ч. %2$d мин. %3$d с.</string>
     <string name="timer_mins">%1$d мин. %2$d с.</string>
