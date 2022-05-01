@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_oks, R.id.nav_training
+                R.id.nav_home, R.id.nav_oks, R.id.nav_training, R.id.nav_feedback
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -67,12 +67,6 @@ class MainActivity : AppCompatActivity() {
         val nameAndSurname: String = extras?.getString("nameAndSurname") ?: "null"
         navUsername.text = nameAndSurname
         navUserEmail.text = sharedPreferences.getString("email", null)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.navigation_drawer, menu)
-        return true
     }
 
     override fun onSupportNavigateUp(): Boolean {

@@ -14,6 +14,9 @@
             android:id="@+id/nav_training"
             android:title="@string/menu_training" />
         <item
+            android:id="@+id/nav_feedback"
+            android:title="@string/menu_feedback"/>
+        <item
             android:id="@+id/nav_logout"
             android:title="@string/logout"
             />

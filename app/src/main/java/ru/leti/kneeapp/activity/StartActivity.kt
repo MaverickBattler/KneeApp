@@ -33,9 +33,9 @@ class StartActivity : AppCompatActivity() {
         val sharedPreferencesProvider = SharedPreferencesProvider(applicationContext)
         val sharedPreferences = sharedPreferencesProvider.getEncryptedSharedPreferences()
         val userEmail = sharedPreferences.getString("email", null)
-        val authToken = sharedPreferences.getString("auth_token", null)
-        val authHeader = "Bearer_$authToken"
         if (userEmail != null) {
+            val authToken = sharedPreferences.getString("auth_token", null)
+            val authHeader = "Bearer_$authToken"
             val requestBody : RequestBody =
                 userEmail.toRequestBody("text/plain".toMediaTypeOrNull())
             userService.getUserData(authHeader, requestBody).enqueue(object :

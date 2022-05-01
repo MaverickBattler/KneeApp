@@ -1,6 +1,15 @@
 <resources>
     <string name="app_name">KneeApp</string>
-    <string name="main_title">Приложение для пациентов, перенесших операцию по замене коленного сустава.</string>
+    <string name="app_description">"    Приложение предназначено для пациентов, перенесших операцию по"
+        замене коленного сустава. В данном приложении вы:\n
+        "   - Ежедневно выполняете упражнения для реабилитации после операции по эндопротезированию"
+        коленного сустава, отмечаете их выполнение и следите за своим прогрессом.\n
+        "   - Еженедельно заполняете анкету Oxford Knee Score для определения вашего состояния и улучшений после тренировок.\n"
+        По ее результатам составляется отчет, в котором также указывается, сколько тренировок вы сделали
+        за неделю.\n
+        "   - В случае экстренной ситуации можете связаться с вашим лечащим врачом через пункт \"Обратная связь\".\n\n"
+           Для навигации в приложении используйте выдвижное меню в левом верхнем углу.\n
+    </string>
     <string name="main_menu_run_oks">Пройти тест Oxford Knee Score</string>
     <string name="question_number">1</string>
     <string name="question_text">Вопрос 1</string>
@@ -89,7 +98,6 @@
     <string name="question12option3">3) С умеренными затруднениями</string>
     <string name="question12option4">4) С чрезвычайными затруднениями</string>
     <string name="question12option5">5) Нет, это невозможно</string>
-    <string name="appName">KneeApp</string>
     <string name="medical_card_id">ID медицинской карты:</string>
     <string name="medical_card_id_hint">12345678ABCD</string>
     <string name="to_continue">Продолжить</string>
@@ -136,7 +144,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Настройки</string>
     <string name="menu_home">Главная</string>
-    <string name="menu_oks">Oxford Knee Score</string>
+    <string name="menu_oks">Анкета OKS</string>
     <string name="menu_training">Тренировки</string>
     <string name="anonymous">Аноним</string>
     <string name="logout">Выйти</string>
@@ -152,5 +160,56 @@
     <string name="channel_name">KneeApp канал уведомлений</string>
     <string name="channel_description">Канал уведомлений приложения KneeApp</string>
     <string name="channel_id">kneeapp</string>
+    <string name="menu_feedback">Обратная связь</string>
+    <string name="feedback_title">Связь с доктором</string>
+    <string name="feedback_main_text">"    Если на фоне полного благополучия вы обнаружили у себя"
+        один или несколько из следующих симптомов:\n
+        1.<b>повышение температуры тела,</b>\n  2.<b>обострение болей</b>,\n  3.<b>усиление отёка в прооперированном
+        коленном суставе</b>,\n  4.<b>появление выделения в области послеоперационного рубца</b>,"\n"
+        то вам необходимо срочно проконсультироваться с вашим лечащим врачом. Свяжитесь с ним
+        самостоятельно либо нажмите на кнопку ниже, чтобы отправить вашему лечащему
+        врачу на электронную почту отчет об экстренной ситуации.</string>
+    <string name="inform_doctor_of_emergency">Сообщить об экстренной ситуации</string>
+    <string name="emergency1">Повышение температуры тела</string>
+    <string name="emergency2">Обострение болей</string>
+    <string name="emergency3">Усиление отёка в прооперированном коленном суставе</string>
+    <string name="emergency4">Появление выделения в области послеоперационного рубца</string>
+    <string name="explanation_contact_doctor">Выберите симптомы, которые вы у себя обнаружили, и нажмите на кнопку \"Отправить\".
+    Далее выберите одно из приложений электронной почты у вас на устройстве, проверьте составленное сообщение и отправьте его.</string>
+    <string name="email_subject">Ухудшение состояния пациента после операции по эндопротезированию коленного сустава</string>
+    <string name="email_text_start">"    Здравствуйте!" Я пациент, перенесший операцию по
+        эндопротезированию коленного сустава в вашем медицинском учреждении. Номер
+        медицинской карты: %1$s, ФИО: %2$s %3$s %4$s."\n    У меня "</string>
+    <string name="email_text_option1">повысилась температура тела. </string>
+    <string name="email_text_option2">внезапно обострилась боль. </string>
+    <string name="email_text_option3">повысилась температура тела и обострились боли. </string>
+    <string name="email_text_option4">усилился отек в прооперированном коленном суставе. </string>
+    <string name="email_text_option5">повысилась температура тела и усилился отек
+        в прооперированном коленном суставе. </string>
+    <string name="email_text_option6">обострилась боль и усилился отек в прооперированном
+        коленном суставе. </string>
+    <string name="email_text_option7">повысилась температура тела, обострилась боль и
+        усилился отек в прооперированном коленном суставе. </string>
+    <string name="email_text_option8">появились выделения в области послеоперационного
+        рубца. </string>
+    <string name="email_text_option9">повысилась температура тела и появились
+        выделения в области послеоперационного рубца. </string>
+    <string name="email_text_option10">обострилась боль и появились
+        выделения в области послеоперационного рубца. </string>
+    <string name="email_text_option11">повысилась температура тела, обострилась боль и
+        появились выделения в области послеоперационного рубца. </string>
+    <string name="email_text_option12">усилился отек в прооперированном коленном
+        суставе и появились выделения в области послеоперационного рубца. </string>
+    <string name="email_text_option13">повысилась температура тела, усилился отек
+        в прооперированном коленном суставе и появились выделения в области послеоперационного рубца. </string>
+    <string name="email_text_option14">повысилась обострилась боль, усилился отек
+        в прооперированном коленном суставе и появились выделения в области послеоперационного рубца. </string>
+    <string name="email_text_option15">повысилась температура тела, обострилась боль,
+        усилился отек в прооперированном коленном суставе и появились выделения в области
+        послеоперационного рубца. </string>
+    <string name="email_text_end">" Мне" необходимо проконсультироваться с вами, пожалуйста,
+        свяжитесь со мной здесь или по телефону %1$s."\n"
+        "   С" уважением, %2$s %3$s.</string>
+    <string name="please_check_a_checkbox">Пожалуйста, отметьте один или несколько вариантов.</string>
 
 </resources>

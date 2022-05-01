@@ -16,5 +16,7 @@ data class UserDataDto (
     @Json(name = "fatherName")
     val fatherName: String,
     @Json(name = "phoneNumber")
-    val phoneNumber: String
+    val phoneNumber: String,
+    @Json(name = "doctorEmail")
+    val doctorEmail: String
 )
