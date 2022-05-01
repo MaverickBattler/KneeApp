@@ -37,7 +37,7 @@ class RegistrationActivity : AppCompatActivity() {
         buttonFinishRegistration.setOnClickListener {
             val password: String = passwordEditText.text.toString()
             val passwordRepeated: String = passwordRepeatEditText.text.toString()
-            if (password == passwordRepeated) {
+            if (password == passwordRepeated && password.length in 8..32) {
                 val extras = intent.extras
                 val medicalCardId: String = extras?.getString("medicalCardId") ?: "null"
                 val requestDto = RegistrationRequestDto(medicalCardId, password)
@@ -65,9 +65,11 @@ class RegistrationActivity : AppCompatActivity() {
                 progressBar.visibility = View.VISIBLE
 
 
-            } else {
+            } else if (password.length in 8..32)
                 showErrorMessage(getString(R.string.passwords_dont_match))
-            }
+            else
+                showErrorMessage(getString(R.string.password_must_be_in_range))
+
         }
         passwordEditText.doAfterTextChanged {
             if (messageTextView.isVisible)

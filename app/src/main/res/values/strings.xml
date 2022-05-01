@@ -126,7 +126,7 @@
     <string name="finish">Зарегистрироваться</string>
     <string name="enter_password_again">Введите пароль снова:</string>
     <string name="registration_success">Успех!</string>
-    <string name="go_back_to_login">Вернуться</string>
+    <string name="back">Вернуться</string>
     <string name="successful_registration_message">Вы успешно зарегистрировались в приложении!
         Осталось только подтвердить электронную почту.</string>
     <string name="passwords_dont_match">Пароли не совпадают.</string>
@@ -211,5 +211,13 @@
         свяжитесь со мной здесь или по телефону %1$s."\n"
         "   С" уважением, %2$s %3$s.</string>
     <string name="please_check_a_checkbox">Пожалуйста, отметьте один или несколько вариантов.</string>
+    <string name="password_must_be_in_range">Длина пароля должна быть от 8 до 32 символов</string>
+    <string name="last_name">Фамилия</string>
+    <string name="first_name">Имя</string>
+    <string name="father_name">Отчество</string>
+    <string name="phone_number">Номер телефона</string>
+    <string name="profile">Профиль</string>
+    <string name="phone_number_example">89532439096</string>
+    
 
 </resources>
