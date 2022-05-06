@@ -33,6 +33,6 @@ object NetworkModule {
         .addConverterFactory(MoshiConverterFactory.create(moshi).asLenient())
         .build()
 
-    val oksResultApiService: OksResultApiService = retrofit.create()
+    val resultApiService: ResultsApiService = retrofit.create()
     val userService: UserService = retrofit.create()
 }

@@ -13,7 +13,7 @@
     <color name="light_brown_variant">#FCC08F</color>
     <color name="active_color">#8A5237</color>
     <color name="active_color_variant">#503926</color>
-    <color name="grey">#606060</color>
+    <color name="gray">#606060</color>
     <color name="error_red">#F11A5E</color>
     <color name="information_color">#464646</color>
     <color name="blue_link">#0277BD</color>
@@ -21,4 +21,6 @@
     <color name="soft_background">#FFFBE2</color>
     <color name="light_gray">#A6A6A6</color>
     <color name="brown_pale">#4E342E</color>
+    <color name="green_completed">#1D8102</color>
+    <color name="light_green">#79DC5E</color>
 </resources>

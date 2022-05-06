@@ -13,6 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KneeApp">
         <activity
+            android:name=".activity.ActivityOksReport"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ExerciseActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.UserProfileActivity"
             android:exported="false" />
         <activity
@@ -47,7 +53,8 @@
             android:name=".activity.EnterMedicalCardIdActivity"
             android:exported="false" />
 
-        <receiver android:name=".AlarmReceiver" />
+        <receiver android:name=".AlarmReceiverNotificationOks" />
+        <receiver android:name=".AlarmReceiverNotificationTraining" />
     </application>
 
 </manifest>

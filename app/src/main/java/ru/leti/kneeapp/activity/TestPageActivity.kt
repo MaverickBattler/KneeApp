@@ -14,19 +14,26 @@ import androidx.core.view.isVisible
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import ru.leti.kneeapp.AlarmReceiver
+import ru.leti.kneeapp.AlarmReceiverNotificationOks
+import ru.leti.kneeapp.AlarmReceiverNotificationTraining
 import ru.leti.kneeapp.network.NetworkModule
 import ru.leti.kneeapp.R
 import ru.leti.kneeapp.util.SharedPreferencesProvider
 import ru.leti.kneeapp.dto.OksResultDto
+import java.util.*
 
 class TestPageActivity : AppCompatActivity() {
 
-    private val oksResultApiService = NetworkModule.oksResultApiService
+    private val oksResultApiService = NetworkModule.resultApiService
 
     private var questionNumber: Int = 1
 
     private var resultArr = ShortArray(12)
+
+    //1 day in milliseconds
+    private val repeatTime: Long = 86400000
+    //one week in milliseconds
+    private val weekInMillis: Long = 604800000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -85,9 +92,64 @@ class TestPageActivity : AppCompatActivity() {
                             } else {//Успешное завершение, переход к окну OKS
                                 val timeInMillis: Long? = response.body()
                                 if (timeInMillis != null) {
-                                    setAlarm(timeInMillis + 604800000)
+                                    setAlarm(timeInMillis + weekInMillis)
+                                    setAlarmRepeating(timeInMillis)
                                     val editor = sharedPreferences.edit()
                                     editor.putLong("last_oks", timeInMillis)
+                                    editor.putString(
+                                        "exercise1_1_pass_mark",
+                                        getString(R.string.not_completed)
+                                    )
+                                    editor.putString(
+                                        "exercise1_2_pass_mark",
+                                        getString(R.string.not_completed)
+                                    )
+                                    editor.putString(
+                                        "exercise1_3_pass_mark",
+                                        getString(R.string.not_completed)
+                                    )
+                                    editor.putString(
+                                        "exercise2_1_pass_mark",
+                                        getString(R.string.not_completed)
+                                    )
+                                    editor.putString(
+                                        "exercise3_1_pass_mark",
+                                        getString(R.string.not_completed)
+                                    )
+                                    editor.putString(
+                                        "exercise3_2_pass_mark",
+                                        getString(R.string.not_completed)
+                                    )
+                                    editor.putString(
+                                        "exercise3_3_pass_mark",
+                                        getString(R.string.not_completed)
+                                    )
+                                    editor.putString(
+                                        "exercise4_1_pass_mark",
+                                        getString(R.string.not_completed)
+                                    )
+                                    editor.putString(
+                                        "exercise4_2_1_pass_mark",
+                                        getString(R.string.not_completed)
+                                    )
+                                    editor.putString(
+                                        "exercise4_2_2_pass_mark",
+                                        getString(R.string.not_completed)
+                                    )
+                                    editor.putString(
+                                        "exercise4_2_3_pass_mark",
+                                        getString(R.string.not_completed)
+                                    )
+                                    editor.putString(
+                                        "exercise4_3_1_pass_mark",
+                                        getString(R.string.not_completed)
+                                    )
+                                    editor.putString(
+                                        "exercise4_3_2_pass_mark",
+                                        getString(R.string.not_completed)
+                                    )
+
+                                    editor.putInt("alarm_count", 1)
                                     editor.apply()
                                     finish()
                                 } else {
@@ -246,13 +308,25 @@ class TestPageActivity : AppCompatActivity() {
 
     private fun setAlarm(at: Long) {
         val alarmManager: AlarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        val i = Intent(applicationContext, AlarmReceiver::class.java)
+        val intent = Intent(applicationContext, AlarmReceiverNotificationOks::class.java)
         val pendingIntent: PendingIntent = PendingIntent.getBroadcast(
-            applicationContext, 0, i,
+            applicationContext, 0, intent,
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
         )
         alarmManager.set(AlarmManager.RTC, at, pendingIntent)
+    }
 
+    private fun setAlarmRepeating(at: Long) {
+        Log.i("Info", "Setting repeating alarm")
+        val alarmManager: AlarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val intent = Intent(applicationContext, AlarmReceiverNotificationTraining::class.java)
+        val pendingIntent: PendingIntent = PendingIntent.getBroadcast(
+            applicationContext, 0, intent,
+            PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
+        )
+        Log.i("Info", "current time = ${Calendar.getInstance().timeInMillis}," +
+                "Time to trigger = $at")
+        alarmManager.setRepeating(AlarmManager.RTC, at, repeatTime, pendingIntent)
     }
 
 }
