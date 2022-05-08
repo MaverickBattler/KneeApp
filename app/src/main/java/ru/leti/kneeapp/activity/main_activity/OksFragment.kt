@@ -57,8 +57,10 @@ class OksFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-        if (::timer.isInitialized)
+        if (::timer.isInitialized) {
             timer.cancel()
+            isRunning = false
+        }
     }
 
     private fun configureTestAvailability() {
@@ -70,6 +72,7 @@ class OksFragment : Fragment() {
         val sharedPreferences = sharedPreferencesProvider.getEncryptedSharedPreferences()
 
         val lastTestTime: Long = sharedPreferences.getLong("last_oks", 0L)
+        println(lastTestTime)
         val timeRemaining: Long = //между тестами должна пройти неделя
             TimeConstants.WEEK_IN_MILLIS - (Calendar.getInstance().timeInMillis - lastTestTime)
         if (lastTestTime != 0L && timeRemaining > 0) {
@@ -104,8 +107,8 @@ class OksFragment : Fragment() {
 
                 override fun onFinish() { //сделать кнопку доступной
                     isRunning = false
-                    textOnTimerTextView.visibility = View.INVISIBLE
-                    timerTextView.visibility = View.INVISIBLE
+                    textOnTimerTextView.visibility = View.GONE
+                    timerTextView.visibility = View.GONE
                     startOksButton.isEnabled = true
                     startOksButton.setBackgroundColor(
                         ContextCompat.getColor(
@@ -171,8 +174,8 @@ class OksFragment : Fragment() {
             }
             timer.start()
         } else { //сделать кнопку доступной
-            textOnTimerTextView.visibility = View.INVISIBLE
-            timerTextView.visibility = View.INVISIBLE
+            textOnTimerTextView.visibility = View.GONE
+            timerTextView.visibility = View.GONE
             startOksButton.isEnabled = true
             startOksButton.setBackgroundColor(
                 ContextCompat.getColor(

@@ -1,68 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.main_activity.OksFragment"
     android:background="@color/soft_background">
 
-    <TextView
-        android:id="@+id/textOnTimerToNextOks"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/next_test_in"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:visibility="invisible"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/buttonRunOKS"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/testOksDescription"
-        app:layout_constraintVertical_bias="0.541" />
+        tools:context=".activity.main_activity.OksFragment"
+        android:background="@color/soft_background"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/testOksDescription"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="@string/test_oks_title"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
+        <TextView
+            android:id="@+id/testOksExplanation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="20dp"
+            android:lineSpacingMultiplier="1.5"
+            android:text="@string/test_oks_explanation"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.184" />
 
-    <Button
-        android:id="@+id/buttonRunOKS"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:backgroundTint="@color/brown"
-        android:text="@string/main_menu_run_oks"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/testOksDescription" />
+        <TextView
+            android:id="@+id/textOnTimerToNextOks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next_test_in"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/testOksExplanation"
+            app:layout_constraintVertical_bias="0.135" />
 
-    <TextView
-        android:id="@+id/timerToNextOks"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/max_timer_value"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:visibility="invisible"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/buttonRunOKS"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textOnTimerToNextOks"
-        app:layout_constraintVertical_bias="0.354" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/timerToNextOks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/max_timer_value"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textOnTimerToNextOks"
+            app:layout_constraintVertical_bias="0.064" />
+
+        <Button
+            android:id="@+id/buttonRunOKS"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            android:backgroundTint="@color/brown"
+            android:text="@string/main_menu_run_oks" />
+    </LinearLayout>
+</ScrollView>

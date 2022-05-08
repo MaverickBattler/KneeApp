@@ -20,25 +20,14 @@
             android:layout_marginTop="50dp"
             android:lineSpacingMultiplier="1.5"
             android:text="@string/results_of_exercises_for_last_week"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/textViewOksResultsStart"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.121" />
+            android:textColor="@color/black" />
 
         <TableLayout
             android:id="@+id/table_layout_report"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewTrainingResultsTitle"
-            app:layout_constraintVertical_bias="0.06">
+            android:layout_marginTop="20dp">
 
             <TableRow
                 android:layout_width="match_parent"
@@ -100,11 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="invisible"
-            android:layout_gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_gravity="center" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -118,13 +103,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/oks_result_is"
                 android:textColor="@color/black"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/table_layout_report"
-                app:layout_constraintVertical_bias="0" />
+                android:textSize="16sp" />
             <TextView
                 android:id="@+id/textViewOksReportResult"
                 android:layout_width="wrap_content"
@@ -133,13 +112,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:layout_marginStart="9dp"
-                app:layout_constraintBottom_toBottomOf="@+id/textViewOksResultsStart"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/textViewOksResultsStart"
-                app:layout_constraintTop_toTopOf="@+id/textViewOksResultsStart"
-                app:layout_constraintVertical_bias="1.0" />
+                android:layout_marginStart="9dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -154,13 +127,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/previous_result"
                 android:textColor="@color/black"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewOksResultsStart"
-                app:layout_constraintVertical_bias="0" />
+                android:textSize="16sp" />
             <TextView
                 android:id="@+id/textViewOksReportPrevResult"
                 android:layout_width="wrap_content"
@@ -168,13 +135,7 @@
                 android:text="@string/oks_result_example"
                 android:textSize="16sp"
                 android:textColor="@color/black"
-                android:layout_marginStart="9dp"
-                app:layout_constraintBottom_toBottomOf="@+id/textViewPreviousResultStart"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0"
-                app:layout_constraintStart_toEndOf="@+id/textViewPreviousResultStart"
-                app:layout_constraintTop_toTopOf="@+id/textViewPreviousResultStart"
-                app:layout_constraintVertical_bias="1.0" />
+                android:layout_marginStart="9dp" />
         </LinearLayout>
 
         <TextView
@@ -185,13 +146,7 @@
             android:lineSpacingMultiplier="1.5"
             android:text="@string/best_outcome"
             android:textColor="@color/black"
-            android:layout_marginTop="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/textViewOksResultsStart"
-            app:layout_constraintTop_toBottomOf="@+id/textViewPreviousResultStart"
-            app:layout_constraintVertical_bias="0.0" />
+            android:layout_marginTop="20dp" />
 
         <Button
             android:id="@+id/buttonOksReportBack"
@@ -201,12 +156,6 @@
             android:layout_marginTop="50dp"
             android:layout_marginBottom="30dp"
             android:layout_marginHorizontal="40dp"
-            android:layout_gravity="end"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.871"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewOksReportAdvise"
-            app:layout_constraintVertical_bias="0.0" />
+            android:layout_gravity="end" />
     </LinearLayout>
 </ScrollView>
