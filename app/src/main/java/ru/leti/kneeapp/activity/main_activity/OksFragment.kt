@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import ru.leti.kneeapp.R
+import ru.leti.kneeapp.TimeConstants
 import ru.leti.kneeapp.util.SharedPreferencesProvider
 import ru.leti.kneeapp.activity.TestPageActivity
 import ru.leti.kneeapp.databinding.FragmentOksBinding
@@ -25,6 +26,8 @@ class OksFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var timer: CountDownTimer
+
+    private var isRunning: Boolean = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -47,7 +50,7 @@ class OksFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        if (!::timer.isInitialized) //когда вернулись в OksFragment из теста
+        if (!isRunning) //когда вернулись в OksFragment из теста
             configureTestAvailability()
     }
 
@@ -68,7 +71,7 @@ class OksFragment : Fragment() {
 
         val lastTestTime: Long = sharedPreferences.getLong("last_oks", 0L)
         val timeRemaining: Long = //между тестами должна пройти неделя
-            604800000 - (Calendar.getInstance().timeInMillis - lastTestTime)
+            TimeConstants.WEEK_IN_MILLIS - (Calendar.getInstance().timeInMillis - lastTestTime)
         if (lastTestTime != 0L && timeRemaining > 0) {
             startOksButton.setBackgroundColor(
                 ContextCompat.getColor(
@@ -81,10 +84,11 @@ class OksFragment : Fragment() {
             timerTextView.visibility = View.VISIBLE
             timer = object : CountDownTimer(timeRemaining, 1000) {
                 override fun onTick(millisUntilFinished: Long) {
-                    val days = millisUntilFinished / 86400000
-                    val hours = (millisUntilFinished / 3600000) % 24
-                    val mins = (millisUntilFinished / 60000) % 60
-                    val secs = (millisUntilFinished / 1000) % 60
+                    isRunning = true
+                    val days = millisUntilFinished / TimeConstants.DAY_IN_MILLIS
+                    val hours = (millisUntilFinished / TimeConstants.HOUR_IN_MILLIS) % 24
+                    val mins = (millisUntilFinished / TimeConstants.MINUTE_IN_MILLIS) % 60
+                    val secs = (millisUntilFinished / TimeConstants.SECOND_IN_MILLIS) % 60
                     when {
                         days > 0 ->
                             timerTextView.text =
@@ -99,6 +103,7 @@ class OksFragment : Fragment() {
                 }
 
                 override fun onFinish() { //сделать кнопку доступной
+                    isRunning = false
                     textOnTimerTextView.visibility = View.INVISIBLE
                     timerTextView.visibility = View.INVISIBLE
                     startOksButton.isEnabled = true

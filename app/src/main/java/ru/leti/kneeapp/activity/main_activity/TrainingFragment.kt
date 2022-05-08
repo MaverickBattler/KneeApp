@@ -22,7 +22,7 @@ class TrainingFragment : Fragment() {
 
     private lateinit var adapter: TrainingAdapter
 
-    private var selectedItem: Int = 0
+    private var selectedItem: Int = -1
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -49,7 +49,7 @@ class TrainingFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        if (selectedItem != 0) { //возвращение из элемента recyclerview
+        if (selectedItem != -1) { //возвращение из элемента recyclerview
             val root: View = binding.root
             val exercises = Datasource().getExercisesList(root.context)
             adapter.setItems(exercises)

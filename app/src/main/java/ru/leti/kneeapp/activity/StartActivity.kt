@@ -32,61 +32,7 @@ class StartActivity : AppCompatActivity() {
 
         val sharedPreferencesProvider = SharedPreferencesProvider(applicationContext)
         val sharedPreferences = sharedPreferencesProvider.getEncryptedSharedPreferences()
-        /*val editor = sharedPreferences.edit()
-        editor.putString(
-            "exercise1_1_pass_mark",
-            getString(R.string.not_allowed_to)
-        )
-        editor.putString(
-            "exercise1_2_pass_mark",
-            getString(R.string.not_allowed_to)
-        )
-        editor.putString(
-            "exercise1_3_pass_mark",
-            getString(R.string.not_allowed_to)
-        )
-        editor.putString(
-            "exercise2_1_pass_mark",
-            getString(R.string.not_allowed_to)
-        )
-        editor.putString(
-            "exercise3_1_pass_mark",
-            getString(R.string.not_allowed_to)
-        )
-        editor.putString(
-            "exercise3_2_pass_mark",
-            getString(R.string.not_allowed_to)
-        )
-        editor.putString(
-            "exercise3_3_pass_mark",
-            getString(R.string.not_allowed_to)
-        )
-        editor.putString(
-            "exercise4_1_pass_mark",
-            getString(R.string.not_allowed_to)
-        )
-        editor.putString(
-            "exercise4_2_1_pass_mark",
-            getString(R.string.not_allowed_to)
-        )
-        editor.putString(
-            "exercise4_2_2_pass_mark",
-            getString(R.string.not_allowed_to)
-        )
-        editor.putString(
-            "exercise4_2_3_pass_mark",
-            getString(R.string.not_allowed_to)
-        )
-        editor.putString(
-            "exercise4_3_1_pass_mark",
-            getString(R.string.not_allowed_to)
-        )
-        editor.putString(
-            "exercise4_3_2_pass_mark",
-            getString(R.string.not_allowed_to)
-        )
-        editor.remove("last_oks")
-        editor.apply()*/
+
         val userEmail = sharedPreferences.getString("email", null)
         if (userEmail != null) {
             val authToken = sharedPreferences.getString("auth_token", null)

@@ -18,6 +18,7 @@ import ru.leti.kneeapp.AlarmReceiverNotificationOks
 import ru.leti.kneeapp.AlarmReceiverNotificationTraining
 import ru.leti.kneeapp.network.NetworkModule
 import ru.leti.kneeapp.R
+import ru.leti.kneeapp.TimeConstants
 import ru.leti.kneeapp.util.SharedPreferencesProvider
 import ru.leti.kneeapp.dto.OksResultDto
 import java.util.*
@@ -29,11 +30,6 @@ class TestPageActivity : AppCompatActivity() {
     private var questionNumber: Int = 1
 
     private var resultArr = ShortArray(12)
-
-    //1 day in milliseconds
-    private val repeatTime: Long = 86400000
-    //one week in milliseconds
-    private val weekInMillis: Long = 604800000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,7 +60,7 @@ class TestPageActivity : AppCompatActivity() {
             showErrorMessage(getString(R.string.choose_an_option_error))
         else {
             resultArr[questionNumber - 1] = (radioGroup
-                .indexOfChild(findViewById(radioGroup.checkedRadioButtonId)) + 1).toShort()
+                .indexOfChild(findViewById(radioGroup.checkedRadioButtonId))).toShort()
             if (questionNumber != 12) {//Кнопка нажата для включения следующего вопроса
                 radioGroup.clearCheck()
                 radioGroup.jumpDrawablesToCurrentState()
@@ -89,10 +85,11 @@ class TestPageActivity : AppCompatActivity() {
                         override fun onResponse(call: Call<Long>, response: Response<Long>) {
                             if (response.code() == 403 || response.code() == 500) {
                                 openLoginActivity() //Ошибка аутентификации
-                            } else {//Успешное завершение, переход к окну OKS
+                            } else {//Успешное завершение, переход к окну с отчетом
                                 val timeInMillis: Long? = response.body()
+                                val previousOks: Long = sharedPreferences.getLong("last_oks", 0)
                                 if (timeInMillis != null) {
-                                    setAlarm(timeInMillis + weekInMillis)
+                                    setAlarm(timeInMillis + TimeConstants.WEEK_IN_MILLIS)
                                     setAlarmRepeating(timeInMillis)
                                     val editor = sharedPreferences.edit()
                                     editor.putLong("last_oks", timeInMillis)
@@ -151,6 +148,8 @@ class TestPageActivity : AppCompatActivity() {
 
                                     editor.putInt("alarm_count", 1)
                                     editor.apply()
+
+                                    openOksReportActivity(findOksResultSum(), previousOks)
                                     finish()
                                 } else {
                                     showErrorMessage(getString(R.string.internal_server_error))
@@ -175,6 +174,21 @@ class TestPageActivity : AppCompatActivity() {
                 progressBar.visibility = View.VISIBLE
             }
         }
+    }
+
+    private fun findOksResultSum(): Int {
+        var resultSum = 0
+        for (result in resultArr) {
+            resultSum += (4 - result)
+        }
+        return resultSum
+    }
+
+    private fun openOksReportActivity(oksResultSum: Int, lastOksTime: Long) {
+        val intent = Intent(this, ActivityOksReport::class.java)
+        intent.putExtra("oks_result_sum", oksResultSum)
+        intent.putExtra("last_oks_time", lastOksTime)
+        startActivity(intent)
     }
 
     private fun setQuestionTextForQuestionNumber() {
@@ -326,7 +340,7 @@ class TestPageActivity : AppCompatActivity() {
         )
         Log.i("Info", "current time = ${Calendar.getInstance().timeInMillis}," +
                 "Time to trigger = $at")
-        alarmManager.setRepeating(AlarmManager.RTC, at, repeatTime, pendingIntent)
+        alarmManager.setRepeating(AlarmManager.RTC, at, TimeConstants.DAY_IN_MILLIS, pendingIntent)
     }
 
 }

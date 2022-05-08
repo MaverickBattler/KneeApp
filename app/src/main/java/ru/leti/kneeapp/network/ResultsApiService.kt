@@ -6,6 +6,7 @@ import retrofit2.http.Header
 import retrofit2.http.POST
 import ru.leti.kneeapp.dto.OksResultDto
 import ru.leti.kneeapp.dto.TrainingDto
+import ru.leti.kneeapp.dto.TrainingRequestDto
 
 interface ResultsApiService {
     @POST("/oksResult")
@@ -19,4 +20,10 @@ interface ResultsApiService {
         @Header("Authorization") authHeader: String,
         @Body trainingDto: TrainingDto
     ): Call<Unit>
+
+    @POST("/get-trainings")
+    fun getTrainings(
+        @Header("Authorization") authHeader: String,
+        @Body trainingRequestDto: TrainingRequestDto
+    ): Call<List<List<Boolean>>>
 }
