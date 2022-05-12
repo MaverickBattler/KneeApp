@@ -118,20 +118,14 @@ class ActivityOksReport : AppCompatActivity() {
                 textViewPrevResult.visibility = View.GONE
             }
             when (oksResultSum) {
-                in 0..19 -> {
-                    textViewOksReportExplanation.text = getString(R.string.worst_outcome)
-                }
-                in 20..29 -> {
+                in 0..26 -> {
                     textViewOksReportExplanation.text = getString(R.string.bad_outcome)
                 }
-                in 30..39 -> {
+                in 27..35 -> {
                     textViewOksReportExplanation.text = getString(R.string.good_outcome)
                 }
-                in 40..47 -> {
-                    textViewOksReportExplanation.text = getString(R.string.very_good_outcome)
-                }
-                48 -> {
-                    textViewOksReportExplanation.text = getString(R.string.best_outcome)
+                in 36..48 -> {
+                    textViewOksReportExplanation.text = getString(R.string.excellent_outcome)
                 }
             }
 
