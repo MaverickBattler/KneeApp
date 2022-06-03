@@ -23,7 +23,7 @@ import ru.leti.kneeapp.network.NetworkModule
 
 class RegistrationActivity : AppCompatActivity() {
 
-    private val userService = NetworkModule.userService
+    private val userService = NetworkModule.userApiService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

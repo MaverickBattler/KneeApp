@@ -25,7 +25,7 @@ import java.util.*
 
 class TestPageActivity : AppCompatActivity() {
 
-    private val oksResultApiService = NetworkModule.resultApiService
+    private val oksResultApiService = NetworkModule.resultsApiService
 
     private var questionNumber: Int = 1
 

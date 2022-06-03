@@ -26,10 +26,11 @@ import ru.leti.kneeapp.dto.UserDataDto
 import ru.leti.kneeapp.network.NetworkModule
 import ru.leti.kneeapp.util.SharedPreferencesProvider
 
-
+//Activity, соответствующее окну приложения, в котором пользователь отправляет
+//сообщение лечащему врачу об экстренной ситуации
 class ContactDoctorActivity : AppCompatActivity() {
-
-    private val userService = NetworkModule.userService
+    // подключение UserApiService
+    private val userService = NetworkModule.userApiService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,7 +42,7 @@ class ContactDoctorActivity : AppCompatActivity() {
         val cb4: CheckBox = findViewById(R.id.checkBoxEmergency4)
         val progressBar: ProgressBar = findViewById(R.id.progressBarSendEmergencies)
         button.setOnClickListener {
-
+            // переменная, которая показывает, какие варианты выбрал пользователь
             var chooseNumber = 0
             if (cb1.isChecked) chooseNumber += 1
             if (cb2.isChecked) chooseNumber += 2
@@ -53,12 +54,15 @@ class ContactDoctorActivity : AppCompatActivity() {
             } else {
                 val sharedPreferencesProvider = SharedPreferencesProvider(applicationContext)
                 val sharedPreferences = sharedPreferencesProvider.getEncryptedSharedPreferences()
+                //Получение данных из EncryptedSharedPreferences
                 val userEmail = sharedPreferences.getString("email", null)
                 if (userEmail != null) {
                     val authToken = sharedPreferences.getString("auth_token", null)
                     val authHeader = "Bearer_$authToken"
+                    //Составление RequestBody из userEmail
                     val requestBody: RequestBody =
                         userEmail.toRequestBody("text/plain".toMediaTypeOrNull())
+                    //Выполнение запроса к серверу
                     userService.getUserData(authHeader, requestBody).enqueue(object :
                         Callback<UserDataDto> {
                         override fun onResponse(
@@ -74,7 +78,7 @@ class ContactDoctorActivity : AppCompatActivity() {
                                     val fatherName = userDataDto.fatherName
                                     val doctorEmail = userDataDto.doctorEmail
                                     val phoneNumber = userDataDto.phoneNumber
-
+                                    //Составление текста письма
                                     var emailText: String = getString(
                                         R.string.email_text_start,
                                         medicalCardId, lastName, firstName, fatherName
@@ -102,6 +106,7 @@ class ContactDoctorActivity : AppCompatActivity() {
                                         lastName,
                                         firstName
                                     )
+                                    // Создание Intent для отправки письма по электронной почте
                                     val i = Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:"))
                                     i.putExtra(Intent.EXTRA_EMAIL, arrayOf(doctorEmail))
                                     i.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.email_subject))
@@ -114,7 +119,7 @@ class ContactDoctorActivity : AppCompatActivity() {
                                 } else
                                     showErrorMessage(getString(R.string.internal_server_error),
                                         R.color.error_red)
-                            } else
+                            } else //Ошибка аутентификации
                                 openLoginActivity()
                             progressBar.visibility = View.INVISIBLE
                             button.visibility = View.VISIBLE
@@ -137,6 +142,7 @@ class ContactDoctorActivity : AppCompatActivity() {
         }
     }
 
+    //Показать всплывающее сообщение об ошибке
     private fun showErrorMessage(errorMessageString: String, color: Int) {
         val animShake: Animation = AnimationUtils.loadAnimation(
             this,
@@ -151,6 +157,7 @@ class ContactDoctorActivity : AppCompatActivity() {
         errorMessage.startAnimation(animShake)
     }
 
+    //Открыть LoginActivity
     private fun openLoginActivity() {
         val loginIntent = Intent(this, LoginActivity::class.java)
         TaskStackBuilder.create(applicationContext)

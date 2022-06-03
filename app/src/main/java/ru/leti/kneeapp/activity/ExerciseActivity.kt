@@ -20,7 +20,7 @@ import java.lang.IllegalArgumentException
 
 class ExerciseActivity : AppCompatActivity() {
 
-    private val resultApiService = NetworkModule.resultApiService
+    private val resultApiService = NetworkModule.resultsApiService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

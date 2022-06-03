@@ -25,7 +25,7 @@ import ru.leti.kneeapp.R
 
 class EnterMedicalCardIdActivity : AppCompatActivity() {
 
-    private val patientIdentityApiService = NetworkModule.userService
+    private val patientIdentityApiService = NetworkModule.userApiService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -11,17 +11,17 @@ import ru.leti.kneeapp.adapter.TrainingAdapter
 import ru.leti.kneeapp.data.Datasource
 import ru.leti.kneeapp.databinding.FragmentTrainingBinding
 
-
+//Фрагмент, соответствующий странице со списком тренировок
 class TrainingFragment : Fragment() {
-
+    //Экземпляр FragmentTrainingBinding
     private var _binding: FragmentTrainingBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-
+    // Адаптер для RecyclerView
     private lateinit var adapter: TrainingAdapter
-
+    // Индекс элемента списка, на который нажал пользователь
     private var selectedItem: Int = -1
 
     override fun onCreateView(
@@ -29,19 +29,24 @@ class TrainingFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         _binding = FragmentTrainingBinding.inflate(inflater, container, false)
+        //Получение binding.root
         val root: View = binding.root
+        // Получение списка упражнений типа List<Training>
         val exercises = Datasource().getExercisesList(root.context)
+        //Создание адаптера
         adapter = TrainingAdapter(root.context, exercises) { position ->
             selectedItem = position
             val exercise = exercises[position]
+            //Открытие ExerciseActivity по нажатию
             val intent = Intent(context, ExerciseActivity::class.java)
             intent.putExtra("exercise", exercise)
             intent.putExtra("exercise_number", position)
             startActivity(intent)
         }
+        //RecyclerView
         val list = binding.exerciseList
+        //Установка адаптера
         list.adapter = adapter
 
         return root
@@ -49,10 +54,13 @@ class TrainingFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        if (selectedItem != -1) { //возвращение из элемента recyclerview
+        if (selectedItem != -1) { // при возвращении из ExerciseActivity
+            //Получение binding.root
             val root: View = binding.root
+            //Список упражнений
             val exercises = Datasource().getExercisesList(root.context)
             adapter.setItems(exercises)
+            // обновление списка элементов для изменения отметки о выполнении упражения
             adapter.notifyItemChanged(selectedItem)
         }
     }
