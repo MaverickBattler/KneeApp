@@ -27,7 +27,7 @@ class FeedbackFragment : Fragment() {
 
         _binding = FragmentFeedbackBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        val button: Button = binding.buttonInformDoctorOfEmergency
+        val button: Button = binding.informDoctorOfEmergencyButton
         button.setOnClickListener {
             openContactDoctorActivity()
         }

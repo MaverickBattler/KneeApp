@@ -37,7 +37,7 @@ class OksFragment : Fragment() {
         _binding = FragmentOksBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val startOksButton: Button = binding.buttonRunOKS
+        val startOksButton: Button = binding.runOksButton
 
         configureTestAvailability()
 
@@ -64,9 +64,9 @@ class OksFragment : Fragment() {
     }
 
     private fun configureTestAvailability() {
-        val textOnTimerTextView: TextView = binding.textOnTimerToNextOks
-        val timerTextView: TextView = binding.timerToNextOks
-        val startOksButton: Button = binding.buttonRunOKS
+        val textOnTimerTextView: TextView = binding.textOnTimerToNextOksTextview
+        val timerTextView: TextView = binding.timerToNextOksTextview
+        val startOksButton: Button = binding.runOksButton
 
         val sharedPreferencesProvider = SharedPreferencesProvider(timerTextView.context)
         val sharedPreferences = sharedPreferencesProvider.getEncryptedSharedPreferences()
