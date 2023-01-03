@@ -25,6 +25,10 @@ import java.util.*
 
 class TestPageActivity : AppCompatActivity() {
 
+    private lateinit var buttonNext: Button
+    private lateinit var radioGroup: RadioGroup
+    private lateinit var errorMessage: TextView
+
     private val oksResultApiService = NetworkModule.resultsApiService
 
     private var questionNumber: Int = 1
@@ -35,9 +39,9 @@ class TestPageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test_page)
 
-        val buttonNext: Button = findViewById(R.id.next_question_button)
-        val radioGroup: RadioGroup = findViewById(R.id.variants_radiogroup)
-        val errorMessage: TextView = findViewById(R.id.error_message_test_page_activity)
+        buttonNext = findViewById(R.id.next_question_button)
+        radioGroup = findViewById(R.id.variants_radiogroup)
+        errorMessage = findViewById(R.id.error_message_test_page_activity)
         radioGroup.setOnCheckedChangeListener { _, _ ->
             if (errorMessage.isVisible)
                 errorMessage.visibility = View.INVISIBLE
@@ -52,8 +56,6 @@ class TestPageActivity : AppCompatActivity() {
     }
 
     private fun onButtonPush() {
-        val radioGroup: RadioGroup = findViewById(R.id.variants_radiogroup)
-        val buttonNext: Button = findViewById(R.id.next_question_button)
         val progressBar: ProgressBar = findViewById(R.id.next_question_progress_bar_test_page_activity)
 
         if (radioGroup.checkedRadioButtonId == -1)
@@ -199,7 +201,6 @@ class TestPageActivity : AppCompatActivity() {
         val radioButtonVariant4: RadioButton = findViewById(R.id.option_4_radiobutton)
         val radioButtonVariant5: RadioButton = findViewById(R.id.option_5_radiobutton)
         val questionNumberView: TextView = findViewById(R.id.question_number_textview)
-        val buttonNext: Button = findViewById(R.id.next_question_button)
 
         when (questionNumber) {
             1 -> {
@@ -308,7 +309,6 @@ class TestPageActivity : AppCompatActivity() {
             this,
             R.anim.text_shake_animaton
         )
-        val errorMessage = findViewById<TextView>(R.id.error_message_test_page_activity)
         errorMessage.text = errorMessageString
         errorMessage.visibility = View.VISIBLE
         errorMessage.startAnimation(animShake)
