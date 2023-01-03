@@ -8,7 +8,7 @@
     android:background="@color/soft_background">
 
     <TextView
-        android:id="@+id/successTextView"
+        android:id="@+id/success_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/registration_success"
@@ -21,7 +21,7 @@
         app:layout_constraintVertical_bias="0.161" />
 
     <Button
-        android:id="@+id/buttonBackToLoginPage"
+        android:id="@+id/back_to_login_page_button"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="@string/back"
@@ -33,7 +33,7 @@
         app:layout_constraintVertical_bias="0.787" />
 
     <TextView
-        android:id="@+id/successfullyRegisteredMessage"
+        android:id="@+id/successfully_registered_textview"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_margin="100dp"
@@ -42,10 +42,10 @@
         android:textSize="16sp"
         android:lineSpacingMultiplier="1.4"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/buttonBackToLoginPage"
+        app:layout_constraintBottom_toTopOf="@+id/back_to_login_page_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/successTextView"
+        app:layout_constraintTop_toBottomOf="@+id/success_textview"
         app:layout_constraintVertical_bias="0.635" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

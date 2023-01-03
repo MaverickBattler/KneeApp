@@ -46,10 +46,10 @@ class ExerciseActivity : AppCompatActivity() {
                 exerciseImage.setImageResource(exercise.exerciseImage1)
             }
         }
-        val exerciseName: TextView = findViewById(R.id.textViewExerciseName)
-        val exerciseExplanation: TextView = findViewById(R.id.textViewExerciseExplanation)
-        val buttonComplete: Button = findViewById(R.id.buttonMarkCompleted)
-        val progressBar: ProgressBar = findViewById(R.id.progressBarCompleteTraining)
+        val exerciseName: TextView = findViewById(R.id.exercise_name_textview)
+        val exerciseExplanation: TextView = findViewById(R.id.exercise_explanation_textview)
+        val buttonComplete: Button = findViewById(R.id.mark_completed_button)
+        val progressBar: ProgressBar = findViewById(R.id.complete_training_progressbar)
         exerciseName.text = getString(exercise.nameStringResourceId)
         exerciseExplanation.text = getString(exercise.explanationStringResourceId)
 

@@ -10,12 +10,12 @@ class UserProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_profile)
 
-        val medicalCardIdTextView: TextView = findViewById(R.id.textViewProfileMedicalCardIdValue)
-        val emailTextView: TextView = findViewById(R.id.textViewProfileEmailValue)
-        val phoneNumberTextView: TextView = findViewById(R.id.textViewProfilePhoneNumberValue)
-        val firstNameTextView: TextView = findViewById(R.id.textViewProfileFirstNameValue)
-        val lastNameTextView: TextView = findViewById(R.id.textViewProfileLastNameValue)
-        val fatherNameTextView: TextView = findViewById(R.id.textViewProfileFatherNameValue)
+        val medicalCardIdTextView: TextView = findViewById(R.id.profile_medical_card_id_value_textview)
+        val emailTextView: TextView = findViewById(R.id.profile_email_value_textview)
+        val phoneNumberTextView: TextView = findViewById(R.id.profile_phone_number_value_textview)
+        val firstNameTextView: TextView = findViewById(R.id.profile_first_name_value_textview)
+        val lastNameTextView: TextView = findViewById(R.id.profile_last_name_value_textview)
+        val fatherNameTextView: TextView = findViewById(R.id.profile_father_name_value_textview)
 
         val extras = intent.extras
         val medicalCardId: String = extras?.getString("medicalCardId") ?: ""

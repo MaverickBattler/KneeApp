@@ -13,7 +13,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textViewTrainingResultsTitle"
+            android:id="@+id/training_results_title_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
@@ -23,7 +23,7 @@
             android:textColor="@color/black" />
 
         <TableLayout
-            android:id="@+id/table_layout_report"
+            android:id="@+id/table_layout_activity_oks_report"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
@@ -84,7 +84,7 @@
         </TableLayout>
 
         <ProgressBar
-            android:id="@+id/progressBarOksReport"
+            android:id="@+id/oks_report_progressbar"
             style="?android:attr/progressBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -98,14 +98,14 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="30dp">
             <TextView
-                android:id="@+id/textViewOksResultsStart"
+                android:id="@+id/oks_results_start_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/oks_result_is"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
             <TextView
-                android:id="@+id/textViewOksReportResult"
+                android:id="@+id/oks_report_result_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/oks_result_example"
@@ -122,14 +122,14 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="20dp">
             <TextView
-                android:id="@+id/textViewPreviousResultStart"
+                android:id="@+id/previous_result_start_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/previous_result"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
             <TextView
-                android:id="@+id/textViewOksReportPrevResult"
+                android:id="@+id/oks_report_prev_result_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/oks_result_example"
@@ -139,7 +139,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textViewOksReportExplanation"
+            android:id="@+id/oks_report_explanation_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
@@ -149,7 +149,7 @@
             android:layout_marginTop="20dp" />
 
         <Button
-            android:id="@+id/buttonOksReportBack"
+            android:id="@+id/oks_report_back_button"
             android:layout_width="wrap_content"
             android:layout_height="55dp"
             android:text="@string/back"

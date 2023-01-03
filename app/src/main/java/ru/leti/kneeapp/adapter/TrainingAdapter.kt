@@ -45,9 +45,9 @@ class TrainingAdapter (context: Context,
         //Картинка с упражнением
         private val image: ImageView = itemView.findViewById(R.id.preview_image)
         //Название упражнения
-        private val title: TextView = itemView.findViewById(R.id.exercise_name)
+        private val title: TextView = itemView.findViewById(R.id.exercise_name_textview_item_training)
         //Отметка о прохождении упражнения
-        private val passMark: TextView = itemView.findViewById(R.id.pass_mark)
+        private val passMark: TextView = itemView.findViewById(R.id.pass_mark_textview)
 
         init {
             itemView.setOnClickListener {

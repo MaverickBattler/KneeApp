@@ -7,7 +7,7 @@
     android:background="@color/soft_background">
 
     <TextView
-        android:id="@+id/feedbackDescription"
+        android:id="@+id/feedback_description_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -23,7 +23,7 @@
         app:layout_constraintVertical_bias="0.08" />
 
     <Button
-        android:id="@+id/buttonInformDoctorOfEmergency"
+        android:id="@+id/inform_doctor_of_emergency_button"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginHorizontal="80dp"
@@ -31,6 +31,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/feedbackDescription"
+        app:layout_constraintTop_toBottomOf="@+id/feedback_description_textview"
         app:layout_constraintVertical_bias="0.5" />
 </androidx.constraintlayout.widget.ConstraintLayout>

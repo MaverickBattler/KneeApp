@@ -25,7 +25,7 @@ class ActivityOksReport : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_oks_report)
         //Закрытие окна по нажатию кнопки (и возвращение к OksFragment)
-        val buttonBack: Button = findViewById(R.id.buttonOksReportBack)
+        val buttonBack: Button = findViewById(R.id.oks_report_back_button)
         buttonBack.setOnClickListener {
             finish()
         }
@@ -35,14 +35,14 @@ class ActivityOksReport : AppCompatActivity() {
         val oksResultSum: Int = extras?.getInt("oks_result_sum") ?: 0
         //Получение времени последнего заполнения OKS из intent.extras
         val lastOksTime: Long = extras?.getLong("last_oks_time") ?: 0
-        val progressBar: ProgressBar = findViewById(R.id.progressBarOksReport)
+        val progressBar: ProgressBar = findViewById(R.id.oks_report_progressbar)
         //Получение экземпляра EncryptedSharedPreferences
         val sharedPreferencesProvider = SharedPreferencesProvider(applicationContext)
         val sharedPreferences = sharedPreferencesProvider.getEncryptedSharedPreferences()
         //Получение электронной почты и токена аутентификации
         val email = sharedPreferences.getString("email", null)
         val authToken = sharedPreferences.getString("auth_token", null)
-        val table: TableLayout = findViewById(R.id.table_layout_report)
+        val table: TableLayout = findViewById(R.id.table_layout_activity_oks_report)
 
         if (authToken != null && email != null) {
             // Создание TrainingRequestDto
@@ -95,7 +95,7 @@ class ActivityOksReport : AppCompatActivity() {
                         } else { //Не показывать результат о тренировках, так как их нет
                             //Текст, который нужно скрыть
                             val textViewToHide: TextView =
-                                findViewById(R.id.textViewTrainingResultsTitle)
+                                findViewById(R.id.training_results_title_textview)
                             textViewToHide.visibility = View.GONE
                             table.visibility = View.GONE
                         }
@@ -106,7 +106,7 @@ class ActivityOksReport : AppCompatActivity() {
 
                 override fun onFailure(call: Call<List<List<Boolean>>>, t: Throwable) {
                     //Текст, который нужно скрыть
-                    val textViewToHide: TextView = findViewById(R.id.textViewTrainingResultsTitle)
+                    val textViewToHide: TextView = findViewById(R.id.training_results_title_textview)
                     textViewToHide.visibility = View.GONE
                     table.visibility = View.GONE
                     Log.i("Failure", t.message ?: "Null message")
@@ -116,16 +116,16 @@ class ActivityOksReport : AppCompatActivity() {
                 }
             })
             // TextView с результатом OKS в баллах
-            val textViewResult: TextView = findViewById(R.id.textViewOksReportResult)
+            val textViewResult: TextView = findViewById(R.id.oks_report_result_textview)
             textViewResult.text = getString(R.string.result_text, oksResultSum)
             // TextView с результатом прошлого OKS в баллах
-            val textViewPrevResult: TextView = findViewById(R.id.textViewOksReportPrevResult)
+            val textViewPrevResult: TextView = findViewById(R.id.oks_report_prev_result_textview)
             // TextView с текстом "Предыдущий результат"
             val textViewPreviousResultStart: TextView =
-                findViewById(R.id.textViewPreviousResultStart)
+                findViewById(R.id.previous_result_start_textview)
             // TextView с текстом, зависящим от результата OKS
             val textViewOksReportExplanation: TextView =
-                findViewById(R.id.textViewOksReportExplanation)
+                findViewById(R.id.oks_report_explanation_textview)
             val previousResult: Int = sharedPreferences.getInt("last_oks_result", -1)
             if (previousResult != -1) {
                 textViewPrevResult.text = getString(R.string.result_text, previousResult)

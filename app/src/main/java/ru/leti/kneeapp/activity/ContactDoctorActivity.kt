@@ -35,12 +35,12 @@ class ContactDoctorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_contact_doctor)
-        val button: Button = findViewById(R.id.buttonSendEmergencies)
-        val cb1: CheckBox = findViewById(R.id.checkBoxEmergency1)
-        val cb2: CheckBox = findViewById(R.id.checkBoxEmergency2)
-        val cb3: CheckBox = findViewById(R.id.checkBoxEmergency3)
-        val cb4: CheckBox = findViewById(R.id.checkBoxEmergency4)
-        val progressBar: ProgressBar = findViewById(R.id.progressBarSendEmergencies)
+        val button: Button = findViewById(R.id.send_emergencies_button)
+        val cb1: CheckBox = findViewById(R.id.emergency_1_checkbox)
+        val cb2: CheckBox = findViewById(R.id.emergency_2_checkbox)
+        val cb3: CheckBox = findViewById(R.id.emergency_3_checkbox)
+        val cb4: CheckBox = findViewById(R.id.emergency_4_checkbox)
+        val progressBar: ProgressBar = findViewById(R.id.send_emergencies_progress_bar)
         button.setOnClickListener {
             // переменная, которая показывает, какие варианты выбрал пользователь
             var chooseNumber = 0
@@ -148,7 +148,7 @@ class ContactDoctorActivity : AppCompatActivity() {
             this,
             R.anim.text_shake_animaton
         )
-        val errorMessage = findViewById<TextView>(R.id.errorMessageContactDoctorActivity)
+        val errorMessage = findViewById<TextView>(R.id.error_message_contact_doctor_activity)
         errorMessage.setTextColor(
             ContextCompat.getColor(applicationContext, color)
         )

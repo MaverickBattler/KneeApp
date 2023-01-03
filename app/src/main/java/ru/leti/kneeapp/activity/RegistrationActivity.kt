@@ -29,11 +29,11 @@ class RegistrationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration)
 
-        val passwordEditText: EditText = findViewById(R.id.editTextCreatePassword)
-        val passwordRepeatEditText: EditText = findViewById(R.id.editTextRepeatPassword)
-        val buttonFinishRegistration: Button = findViewById(R.id.buttonFinishRegistration)
-        val messageTextView: TextView = findViewById(R.id.errorMessageRegistrationStep2)
-        val progressBar: ProgressBar = findViewById(R.id.progressBarRegistrationStep2)
+        val passwordEditText: EditText = findViewById(R.id.create_password_edittext)
+        val passwordRepeatEditText: EditText = findViewById(R.id.repeat_password_edittext)
+        val buttonFinishRegistration: Button = findViewById(R.id.finish_registration_button)
+        val messageTextView: TextView = findViewById(R.id.error_message_registration_step_2)
+        val progressBar: ProgressBar = findViewById(R.id.registration_step_2_progressbar)
         buttonFinishRegistration.setOnClickListener {
             val password: String = passwordEditText.text.toString()
             val passwordRepeated: String = passwordRepeatEditText.text.toString()
@@ -94,7 +94,7 @@ class RegistrationActivity : AppCompatActivity() {
             this,
             R.anim.text_shake_animaton
         )
-        val errorMessage = findViewById<TextView>(R.id.errorMessageRegistrationStep2)
+        val errorMessage = findViewById<TextView>(R.id.error_message_registration_step_2)
         errorMessage.setTextColor(
             ContextCompat.getColor(applicationContext, R.color.error_red)
         )

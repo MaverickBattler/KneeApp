@@ -14,7 +14,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/testOksExplanation"
+            android:id="@+id/test_oks_explanation_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
@@ -32,7 +32,7 @@
             app:layout_constraintVertical_bias="0.184" />
 
         <TextView
-            android:id="@+id/textOnTimerToNextOks"
+            android:id="@+id/text_on_timer_to_next_oks_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/next_test_in"
@@ -46,11 +46,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/testOksExplanation"
+            app:layout_constraintTop_toBottomOf="@+id/test_oks_explanation_textview"
             app:layout_constraintVertical_bias="0.135" />
 
         <TextView
-            android:id="@+id/timerToNextOks"
+            android:id="@+id/timer_to_next_oks_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/max_timer_value"
@@ -64,11 +64,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textOnTimerToNextOks"
+            app:layout_constraintTop_toBottomOf="@+id/text_on_timer_to_next_oks_textview"
             app:layout_constraintVertical_bias="0.064" />
 
         <Button
-            android:id="@+id/buttonRunOKS"
+            android:id="@+id/run_oks_button"
             android:layout_width="300dp"
             android:layout_height="80dp"
             android:layout_gravity="center"

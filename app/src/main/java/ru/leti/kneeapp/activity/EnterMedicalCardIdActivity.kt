@@ -30,10 +30,10 @@ class EnterMedicalCardIdActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_enter_medical_card_id)
-        val progressBar = findViewById<ProgressBar>(R.id.progressBarRegistrationStep1)
-        val buttonLogin = findViewById<Button>(R.id.buttonContinueToStep2)
-        val editTextMedicalCardId = findViewById<EditText>(R.id.editTextMedicalCardID)
-        val messageTextView = findViewById<TextView>(R.id.errorMessageRegistrationStep1)
+        val progressBar = findViewById<ProgressBar>(R.id.registration_step_1_progress_bar)
+        val buttonLogin = findViewById<Button>(R.id.continue_to_step_2_button)
+        val editTextMedicalCardId = findViewById<EditText>(R.id.medical_card_id_edittext)
+        val messageTextView = findViewById<TextView>(R.id.error_message_registration_step1)
 
         buttonLogin.setOnClickListener {
             val medicalCardId = editTextMedicalCardId.text.toString()
@@ -84,7 +84,7 @@ class EnterMedicalCardIdActivity : AppCompatActivity() {
             this,
             R.anim.text_shake_animaton
         )
-        val errorMessage = findViewById<TextView>(R.id.errorMessageRegistrationStep1)
+        val errorMessage = findViewById<TextView>(R.id.error_message_registration_step1)
         errorMessage.setTextColor(
             ContextCompat.getColor(applicationContext, R.color.error_red)
         )
@@ -98,7 +98,7 @@ class EnterMedicalCardIdActivity : AppCompatActivity() {
             this,
             R.anim.text_shake_animaton
         )
-        val message = findViewById<TextView>(R.id.errorMessageRegistrationStep1)
+        val message = findViewById<TextView>(R.id.error_message_registration_step1)
         message.setTextColor(
             ContextCompat.getColor(
                 applicationContext,

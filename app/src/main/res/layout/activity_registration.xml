@@ -6,38 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".activity.EnterMedicalCardIdActivity"
     android:background="@color/soft_background">
-
     <TextView
-        android:id="@+id/passwordEnterAgainTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/enter_password_again"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/step2TextView"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCreatePassword"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/passwordEnterTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/enter_password"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/step2TextView"
-        app:layout_constraintTop_toBottomOf="@+id/step2TextView"
-        app:layout_constraintVertical_bias="0.109" />
-
-    <TextView
-        android:id="@+id/step2TextView"
+        android:id="@+id/step2_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/registration_step2"
@@ -50,32 +20,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.161" />
 
-    <Button
-        android:id="@+id/buttonFinishRegistration"
+    <TextView
+        android:id="@+id/password_enter_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/finish"
-        android:textSize="12sp"
+        android:text="@string/enter_password"
+        android:textColor="@color/black"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.796"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/errorMessageRegistrationStep2"
-        app:layout_constraintVertical_bias="0.494" />
-
-    <ProgressBar
-        android:id="@+id/progressBarRegistrationStep2"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonFinishRegistration"
-        app:layout_constraintEnd_toEndOf="@+id/buttonFinishRegistration"
-        app:layout_constraintStart_toStartOf="@+id/buttonFinishRegistration"
-        app:layout_constraintTop_toTopOf="@+id/buttonFinishRegistration" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/step2_textview"
+        app:layout_constraintTop_toBottomOf="@+id/step2_textview"
+        app:layout_constraintVertical_bias="0.109" />
 
     <EditText
-        android:id="@+id/editTextCreatePassword"
+        android:id="@+id/create_password_edittext"
         android:layout_width="250dp"
         android:layout_height="48dp"
         android:layout_marginTop="18dp"
@@ -84,26 +44,41 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/passwordEnterTextView"
-        app:layout_constraintTop_toBottomOf="@+id/passwordEnterTextView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <EditText
-        android:id="@+id/editTextRepeatPassword"
-        android:layout_width="250dp"
-        android:layout_height="48dp"
-        android:inputType="textPassword"
-        android:hint="@string/password_hint"
-        android:layout_marginTop="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/step2TextView"
-        app:layout_constraintTop_toBottomOf="@+id/passwordEnterAgainTextView"
+        app:layout_constraintStart_toStartOf="@+id/password_enter_textview"
+        app:layout_constraintTop_toBottomOf="@+id/password_enter_textview"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/errorMessageRegistrationStep2"
+        android:id="@+id/password_enter_again_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_password_again"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/step2_textview"
+        app:layout_constraintTop_toBottomOf="@+id/create_password_edittext"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/repeat_password_edittext"
+        android:layout_width="250dp"
+        android:layout_height="48dp"
+        android:inputType="textPassword"
+        android:hint="@string/password_hint"
+        android:layout_marginTop="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/step2_textview"
+        app:layout_constraintTop_toBottomOf="@+id/password_enter_again_textview"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/error_message_registration_step_2"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -113,12 +88,35 @@
         android:textSize="16sp"
         android:textStyle="italic"
         android:visibility="invisible"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextRepeatPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editTextRepeatPassword"
+        app:layout_constraintStart_toStartOf="@+id/repeat_password_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/repeat_password_edittext"
         app:layout_constraintVertical_bias="0" />
+
+    <Button
+        android:id="@+id/finish_registration_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/finish"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.796"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/error_message_registration_step_2"
+        app:layout_constraintVertical_bias="0.494" />
+
+    <ProgressBar
+        android:id="@+id/registration_step_2_progressbar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/finish_registration_button"
+        app:layout_constraintEnd_toEndOf="@+id/finish_registration_button"
+        app:layout_constraintStart_toStartOf="@+id/finish_registration_button"
+        app:layout_constraintTop_toTopOf="@+id/finish_registration_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,7 @@
     android:background="@color/soft_background">
 
     <TextView
-        android:id="@+id/startAppNameTextView"
+        android:id="@+id/app_name_textview_start_activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"

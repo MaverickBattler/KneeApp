@@ -109,9 +109,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
         val navUsername: TextView = headerView
-            .findViewById(R.id.textViewFirstnameLastnameNavDrawer)
+            .findViewById(R.id.first_name_last_name_navdrawer_textview)
         val navUserEmail: TextView = headerView
-            .findViewById(R.id.textViewEmailNavDrawer)
+            .findViewById(R.id.email_nav_drawer_textview)
         val extras = intent.extras
         val nameAndSurname: String = extras?.getString("nameAndSurname") ?: "null"
         navUsername.text = nameAndSurname

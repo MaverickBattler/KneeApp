@@ -18,7 +18,7 @@
         app:layout_constraintRight_toRightOf="parent"/>
 
     <TextView
-        android:id="@+id/pass_mark"
+        android:id="@+id/pass_mark_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
@@ -31,11 +31,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/exercise_name"
+        app:layout_constraintTop_toBottomOf="@+id/exercise_name_textview_item_training"
         app:layout_constraintVertical_bias="1" />
 
     <TextView
-        android:id="@+id/exercise_name"
+        android:id="@+id/exercise_name_textview_item_training"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="130dp"

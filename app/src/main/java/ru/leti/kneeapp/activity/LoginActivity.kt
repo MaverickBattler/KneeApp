@@ -35,12 +35,12 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val editTextEmailAddress: EditText = findViewById(R.id.editTextEmailAddress)
-        val editTextPassword: EditText = findViewById(R.id.editTextPassword)
-        val buttonToLogin: Button = findViewById(R.id.buttonToLogin)
-        val progressBar: ProgressBar = findViewById(R.id.progressBarLogin)
-        val errorMessage: TextView = findViewById(R.id.errorMessageLoginActivity)
-        val toRegister: TextView = findViewById(R.id.toRegister)
+        val editTextEmailAddress: EditText = findViewById(R.id.email_address_edittext)
+        val editTextPassword: EditText = findViewById(R.id.password_edittext)
+        val buttonToLogin: Button = findViewById(R.id.to_login_button)
+        val progressBar: ProgressBar = findViewById(R.id.login_progressbar)
+        val errorMessage: TextView = findViewById(R.id.error_message_login_activity)
+        val toRegister: TextView = findViewById(R.id.to_register_textview)
         buttonToLogin.setOnClickListener {
             val email = editTextEmailAddress.text.toString()
             val password = editTextPassword.text.toString()
@@ -131,7 +131,7 @@ class LoginActivity : AppCompatActivity() {
             this,
             R.anim.text_shake_animaton
         )
-        val errorMessage = findViewById<TextView>(R.id.errorMessageLoginActivity)
+        val errorMessage = findViewById<TextView>(R.id.error_message_login_activity)
         errorMessage.setTextColor(
             ContextCompat.getColor(applicationContext, R.color.error_red)
         )

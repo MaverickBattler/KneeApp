@@ -13,8 +13,8 @@ class RegistrationSuccessActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration_success)
 
-        val messageTextView : TextView = findViewById(R.id.successfullyRegisteredMessage)
-        val buttonReturn : Button = findViewById(R.id.buttonBackToLoginPage)
+        val messageTextView : TextView = findViewById(R.id.successfully_registered_textview)
+        val buttonReturn : Button = findViewById(R.id.back_to_login_page_button)
         val extras = intent.extras
         val email: String = extras?.getString("email") ?: "null"
         val hiddenEmail: String

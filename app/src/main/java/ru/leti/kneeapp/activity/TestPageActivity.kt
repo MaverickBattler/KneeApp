@@ -35,9 +35,9 @@ class TestPageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test_page)
 
-        val buttonNext: Button = findViewById(R.id.nextButton)
-        val radioGroup: RadioGroup = findViewById(R.id.radioGroupVariants)
-        val errorMessage: TextView = findViewById(R.id.errorMessageTestPageActivity)
+        val buttonNext: Button = findViewById(R.id.next_question_button)
+        val radioGroup: RadioGroup = findViewById(R.id.variants_radiogroup)
+        val errorMessage: TextView = findViewById(R.id.error_message_test_page_activity)
         radioGroup.setOnCheckedChangeListener { _, _ ->
             if (errorMessage.isVisible)
                 errorMessage.visibility = View.INVISIBLE
@@ -52,9 +52,9 @@ class TestPageActivity : AppCompatActivity() {
     }
 
     private fun onButtonPush() {
-        val radioGroup: RadioGroup = findViewById(R.id.radioGroupVariants)
-        val buttonNext: Button = findViewById(R.id.nextButton)
-        val progressBar: ProgressBar = findViewById(R.id.progressBarTestPage)
+        val radioGroup: RadioGroup = findViewById(R.id.variants_radiogroup)
+        val buttonNext: Button = findViewById(R.id.next_question_button)
+        val progressBar: ProgressBar = findViewById(R.id.next_question_progress_bar_test_page_activity)
 
         if (radioGroup.checkedRadioButtonId == -1)
             showErrorMessage(getString(R.string.choose_an_option_error))
@@ -192,14 +192,14 @@ class TestPageActivity : AppCompatActivity() {
     }
 
     private fun setQuestionTextForQuestionNumber() {
-        val questionTextView: TextView = findViewById(R.id.questionText)
-        val radioButtonVariant1: RadioButton = findViewById(R.id.option1)
-        val radioButtonVariant2: RadioButton = findViewById(R.id.option2)
-        val radioButtonVariant3: RadioButton = findViewById(R.id.option3)
-        val radioButtonVariant4: RadioButton = findViewById(R.id.option4)
-        val radioButtonVariant5: RadioButton = findViewById(R.id.option5)
-        val questionNumberView: TextView = findViewById(R.id.questionNumber)
-        val buttonNext: Button = findViewById(R.id.nextButton)
+        val questionTextView: TextView = findViewById(R.id.question_text_textview)
+        val radioButtonVariant1: RadioButton = findViewById(R.id.option_1_radiobutton)
+        val radioButtonVariant2: RadioButton = findViewById(R.id.option_2_radiobutton)
+        val radioButtonVariant3: RadioButton = findViewById(R.id.option_3_radiobutton)
+        val radioButtonVariant4: RadioButton = findViewById(R.id.option_4_radiobutton)
+        val radioButtonVariant5: RadioButton = findViewById(R.id.option_5_radiobutton)
+        val questionNumberView: TextView = findViewById(R.id.question_number_textview)
+        val buttonNext: Button = findViewById(R.id.next_question_button)
 
         when (questionNumber) {
             1 -> {
@@ -308,7 +308,7 @@ class TestPageActivity : AppCompatActivity() {
             this,
             R.anim.text_shake_animaton
         )
-        val errorMessage = findViewById<TextView>(R.id.errorMessageTestPageActivity)
+        val errorMessage = findViewById<TextView>(R.id.error_message_test_page_activity)
         errorMessage.text = errorMessageString
         errorMessage.visibility = View.VISIBLE
         errorMessage.startAnimation(animShake)
