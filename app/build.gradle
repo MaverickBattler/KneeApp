@@ -2,16 +2,16 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'kotlin-android-extensions'
+    id 'kotlin-parcelize'
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "ru.leti.kneeapp"
         minSdk 23
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -34,6 +34,7 @@ android {
     buildFeatures {
         viewBinding true
     }
+    namespace 'ru.leti.kneeapp'
 }
 
 dependencies {
