@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -24,12 +23,7 @@
             android:text="@string/test_oks_explanation"
             android:textAlignment="textStart"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.184" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/text_on_timer_to_next_oks_textview"
@@ -41,13 +35,7 @@
             android:textSize="16sp"
             android:layout_gravity="center"
             android:visibility="gone"
-            android:layout_marginBottom="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/test_oks_explanation_textview"
-            app:layout_constraintVertical_bias="0.135" />
+            android:layout_marginBottom="20dp" />
 
         <TextView
             android:id="@+id/timer_to_next_oks_textview"
@@ -59,13 +47,7 @@
             android:textSize="18sp"
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_on_timer_to_next_oks_textview"
-            app:layout_constraintVertical_bias="0.064" />
+            android:visibility="gone" />
 
         <Button
             android:id="@+id/run_oks_button"
